@@ -1,0 +1,55 @@
+<form action="javascript:void(0)" method="post">
+    <div>
+        <label>项目名称：</label><input name="pro_name">
+    </div>
+    <div class="web_pan">
+        <div>
+            <label>网站名：</label><input name="web_name"><label>网址：</label><input name="web_url">
+            <img onclick="deleteItem(this)" width="30px" src="/static/imgs/delete.png">
+        </div>
+    </div>
+
+    <div>
+        <img title="添加导航网站" onclick="addWeb()" width="30px" src="/static/imgs/add.png">
+    </div>
+    <input type="submit" onclick="save()" value="提交">
+</form>
+<script>
+    function addWeb() {
+        var html =
+                ' <div>'
+                  +'<label>网站名：</label><input name="web_name">'
+                  +'<label>网址：</label><input name="web_url">'
+                  +' <img onclick="deleteItem(this)" width="30px" src="/static/imgs/delete.png">'
+                +'</div>'
+        $(".web_pan").append(html);
+    }
+
+    function deleteItem(e) {
+        $(e).parent().remove();
+    }
+    
+    function save() {
+        var proName = $('input[name=pro_name]').val();
+        var params = {pro_name:proName,web_list:[]};
+
+        $('input[name=web_name]').each(function(i){
+            params['web_list'][i] = {name:$(this).val(),url:null}
+        });
+        $('input[name=web_url]').each(function(i){
+            params['web_list'][i]['url'] = $(this).val();
+        });
+
+        console.log(params);
+        $.post('/admin/project/save',params,function (result,status) {
+            console.log(result);
+            if(result['code']==100){
+                alert("成功！");
+                location.href = '/';
+            } else {
+                alert(result['msg']);
+            }
+
+        })
+    }
+</script>

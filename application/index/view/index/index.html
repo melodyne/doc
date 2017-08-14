@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/scroll.css">
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="siteCtrl">
+
+<div class="menu" id="style-6">
+    <ul>
+        <li>
+            <span>项目导航</span>
+            <ul>
+                <li>
+                    <a href="#ebb8f580b39044d19e40157b5acf90e0">民宿列表</a>
+                </li>
+                <li>
+                    <a href="#12aa43a6934d49729cdf54264720af61">民宿详情</a>
+                </li>
+                <li>
+                    <a href="#bcf780f532004c01bac8c634971d4e79">新增和修改价格日历</a>
+                </li>
+                <li>
+                    <a href="#99e5949bc11141ff80c418cca6d2de24">价格日历</a>
+                </li>
+            </ul>
+            <span>项目原型</span>
+            <ul >
+
+                <li>
+                    <a href="#38d1ca42c60f40e48825998b3eca51ef">书籍列表</a>
+                </li>
+                <li>
+                    <a href="#079f46b2c8d147f390a6cecf6271c5d2">书本详情</a>
+                </li>
+                <li>
+                    <a href="#16e92fe4cff54ef19f4142d2cb01f732">租书</a>
+                </li>
+            </ul>
+            <span>开发规范</span>
+            <ul >
+
+                <li>
+                    <a href="#d76b365968ce459fa3973aa6dfb952dd">评价</a>
+                </li>
+                <li>
+                    <a href="#c28aeee3ab66476aa0a5a83f9981692b">评论点赞</a>
+                </li>
+            </ul>
+            <span>开发文档</span>
+            <ul >
+
+                <li>
+                    <a href="#2dd8239c5d2343698852ec1eaab67ea1">收藏\取消收藏</a>
+                </li>
+                <li>
+                    <a href="#da85cb6ba7e343559bd8923f08a4d81b">收藏列表</a>
+                </li>
+                <li>
+                    <a href="#8939c742766443c5a0398c8c20a56764">收藏详情</a>
+                </li>
+                <li>
+                    <a href="#aaff66308a854017a5463758cddd06b0">删除收藏</a>
+                </li>
+            </ul>
+            <span>附加</span>
+            <ul >
+                <li>
+                    <a href="/admin">后台入口</a>
+                </li>
+            </ul>
+
+        </li>
+    </ul>
+</div>
+
+<div class="container">
+    <div class="pro" ng-repeat="pro in datas">
+
+        <div class="nav">
+            <label>{{pro.name}}</label>
+        </div>
+
+        <div class="content">
+            <div class="website" ng-repeat="wbs in pro.website">
+                <label>{{wbs.name}}:</label><a href="{{wbs.url}}">{{wbs.url}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('siteCtrl', function ($scope, $http) {
+        $http.get("/api/index/index").then(function (response) {
+            $scope.datas = response['data'];
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    {volist name='list' id = 'm'}
+    <h4>{$m.name}</h4>
+    <div>
+        {volist name='m.website' id='web'}
+        <div style="margin-top: 8px">
+            <span>{$web.name}:</span> <a href="$web.url" target="_blank">{$web.url}</a>
+        </div>
+        {/volist}
+    </div>
+    <div align="right">
+        <a href="/admin/project/edit/id/{$m.pro_id}">编辑</a>
+    </div>
+    <hr>
+    {/volist}
+</div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* app css stylesheet */
+
+html,body{
+  height:100%;
+  overflow:hidden;
+}
+
+.header{
+  background: #1c98d8;
+}
+.menu > li {
+  display: inline;
+}
+.menu_info{
+  margin-top: 15px;
+  float: left;
+  width: 80%;
+}
+.login_info{
+  float: right;
+  width: 20%;
+  text-align: center;
+  color: white;
+  line-height: 60px;
+  cursor:pointer;
+}
+.clear{
+  clear: both;
+}
+.menu_info ul li a{
+  margin: 10px;
+  color: white;
+  text-decoration:none;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 微软雅黑;
+}
+.content{
+  background: #fafafa;
+  height: 100%;
+}
+
+.home{
+  background-image: url("dist/imgs/home.png") ;
+  height: 100%;
+  text-align:center;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 微软雅黑;
+  line-height: 550px;
+  padding-left: 100px;
+}
+.lump{
+  height: 460px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+}
+.edit_item{
+  margin: 11px 20px 11px 30px;
+}
+.edit_item div{
+  margin-bottom: 8px;
+}
+
+.edit_item div label{
+  margin-left: 10px;
+  margin-right: 8px;
+}
+
+.column{
+  margin-bottom: 1px;
+  padding: 0 10px 0 15px;
+  height: 35px;
+  line-height: 35px;
+  border-bottom: 1px solid #cdcdcd;
+  background-color: #eee;
+  font-weight: bold;
+  color:#555555;
+}
+
+.btnn {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 6px 16px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #edffd1;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 0 none;
+  background-color: #4bbd00;
+}
+
+.btn:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #4cdb00;
+  border-bottom: 0 none;
+}
+.con_head{
+  padding:20px 100px 20px 100px;
+}
+.sub_table{
+  width: 80%;
+  height: 20px;
+}
+
+.nav-tabs {
+  padding: 30px 0 0 50px;
+  margin: 0 50px 0 50px;
+  list-style:none;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-tabs li{
+  padding: 0px;
+  margin: 0px;
+  float: left;
+}
+.nav-tabs li a{
+  margin: 10px;
+  color: #4bbd00;
+  text-decoration:none;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 微软雅黑;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+.nav-tabs>li>a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.nav>li>a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin: 0px;
+}
+
+.nav-tabs>li {
+  float: left;
+  margin-bottom: -1px;
+}
+.nav-tabs>li>a:hover{
+  background-color: #eee;
+}
+
+.main{
+  background-color: white;
+  padding: 30px 50px 100px 50px;
+}
+.search_bar{
+  text-align: right;
+  padding-bottom: 10px;
+}
+td{
+  text-align: center;
+}
+
+.radius{
+  -moz-border-radius:10px;     /*仅firefox支持，实现圆角效果*/
+  -webkit-border-radius:10px;    /*仅safari，chrome支持，实现圆角效果*/
+  -khtml-border-radius:10px;
+  border-radius:10px;
+  color: white;
+  font-family: 微软雅黑;
+  font-size:10px;
+  padding: 3px 12px 3px 12px;
+}
+.yellow_bg{
+  background-color:#f90;
+}
+.orangered_bg{
+  background-color:orangered;
+}
+.green_bg{
+  background-color:#4bbd00;
+}
+.option{
+  margin: 10px 20px 10px 20px;
+}
+.option label{
+  margin-right: 10px;
+}
+
+.option div{
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.selected{
+  margin: 5px;
+  color:#4bbd00;
+  font-weight: bold;
+  font-family: 微软雅黑;
+}
+
+/** 颜色 **/
+
+.red{
+  color: red;
+}
+
+.logout{
+  color: white;
+  text-decoration:none;
+}
+
+.logout:hover{
+  color: yellowgreen;
+}
+
+.login_welcome{
+  margin-right: 20px ;
+  color: #bce8f1;
+  font-weight: bold
+}

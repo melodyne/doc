@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-web="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-web="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-web="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>基于AngularJS的题库管理系统</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="dist/css/normalize.css">
+  <link rel="stylesheet" href="dist/css/main.css">
+  <link rel="stylesheet" href="dist/css/reveal.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" >
+
+  <script src="dist/js/modernizr-2.8.3.min.js"></script>
+  <script src="dist/js/jquery-1.7.1.min.js"></script>
+  <script src="dist/js/jquery.reveal.js"></script>
+</head>
+<body ng-controller="mainCtrl">
+  <div class="header">
+    <div class="menu_info">
+      <ul class="menu">
+        <li><a href="#!/home">首页</a></li>
+        <li ng-show="loginUser.user_type==1"><a href="#!/subject">科目</a></li>
+        <li ng-show="loginUser.user_type==1"><a href="#!/topic">试题</a></li>
+        <li><a href="#!/paper">试卷</a></li>
+        <li ng-show="loginUser.user_type==1"><a href="#!/sys">系统</a></li>
+      </ul>
+    </div>
+    <div class="login_info">
+      <span class="login_welcome" ng-show="loginUser.user_type==0">欢迎管理员：{{loginUser.name}}</span>
+      <span class="login_welcome" ng-show="loginUser.user_type==1">欢迎老师：{{loginUser.name}}</span>
+      <span class="login_welcome" ng-show="loginUser.user_type==2">欢迎学生：{{loginUser.name}}</span>
+      <span class="logout" ng-click="logout()">退出</span>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- 边栏end -->
+  <!-- 内容 -->
+  <div ng-view class="content" style="overflow: scroll"></div>
+  <!-- 内容end -->
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="vendor/angular.min.js"></script>
+  <script src="vendor/angular-route.min.js"></script>
+  <script src="vendor/angular-ui-bootstrap.js"></script>
+  <script src="app.js"></script>
+  <script src="dist/js/common.js"></script>
+  <script src="dist/js/db.js"></script>
+  <script src="controller/home.js"></script>
+  <script src="controller/subject.js"></script>
+  <script src="controller/paper.js"></script>
+  <script src="controller/preview.js"></script>
+  <script src="controller/exam.js"></script>
+  <script src="controller/topic.js"></script>
+  <script src="controller/yuejuan.js"></script>
+  <script src="controller/sys.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

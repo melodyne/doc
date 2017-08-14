@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)http://qbms.motk.com/ -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>题库管理系统</title>
+    <meta property="qc:admins" content="1540401750625161566654">
+    <meta name="viewpoontent=" width="device-width," initial-scale="1.0">
+    
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <link href="dist/css/matrix-login.css" rel="stylesheet">
+
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+    <script src="dist/js/jquery-1.7.1.min.js"></script>
+    <script src="dist/js/jquery.cookie.js"></script>
+    <script src="dist/js/login.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('siteCtrl', function($scope, $http) {
+
+            $scope.doLogin =function () {
+
+                if(!$scope.data){
+                    return;
+                }
+                if(!$scope.data['account']||!$scope.data['pwd']){
+                    return;
+                }
+
+                var regx = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+                var regx2 = /^1[34578]\d{9}$/;
+                if (!(regx.test($scope.data['account'])||regx2.test($scope.data['account']))) {
+                    alert("输入的手机号或邮箱无效！")
+                    return;
+                }
+
+                if(!$scope.data['userType']){
+                    alert("请选择角色登陆！");
+                    return;
+                }
+
+                $http.post("/Api/user/login",$scope.data).then(function (response) {
+                    if(response.data['code']==100){
+                        window.location.href = 'index.html';
+                        sessionStorage.setItem('loginUser',angular.toJson(response.data['data']));
+                    }else {
+                        alert(response.data['msg']);
+                    }
+
+                });
+            }
+        });
+    </script>
+ 
+<body style="overflow: auto"  ng-app="myApp" ng-controller="siteCtrl">
+    <div style="width: 100%; min-width: 1300px; height: 250px; background-color: #1c98d8; text-align: center;">
+        <div>
+            <img src="dist/imgs/tkname.png" style="width: 300px; margin: 120px 32% 0 30%; float: left;">
+        </div>
+    </div>
+    <div style="width: 1000px; margin: 0 auto;">
+        <div id="loginbox" style="width: 500px!important; float: right; margin: 0px;">
+            <form id="loginform" class="form-vertical" action="http://qbms.motk.com/#">
+                <div class="">
+                    <div style="margin-top: 10px;margin-left: 15px;">
+                        <div class="control-group" style="position: relative;">
+                            <div class="controls">
+                                <div class="main_input_box" style="position: relative;width:260px;margin:0px;">
+                                    <input id="userNameIptl" ng-model="data.account" name="userNameIptl" type="text" placeholder="手机/邮箱" style="width:250px;" maxlength="100">
+                                    <div class="inputReset" href="javascript:void(0);" style="display: none;"></div>
+                                </div>
+                                <div id="userNameInfo" class="warningtip" style="display: none;"></div>
+                            </div>
+                        </div>
+                        <div class="control-group" style="position: relative;">
+                            <div class="controls">
+                                <div class="main_input_box" style="position: relative;width:260px;margin:0px;">
+                                    <input id="passwordIptl" ng-model="data.pwd" name="passwordIptl" type="password" placeholder="密码" style="width:250px;" maxlength="20">
+                                    <div class="inputReset" href="javascript:void(0);" style="display: none;"></div>
+                                </div>
+                                <div id="passwordInfo" class="warningtip" style="display: none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="control-group" style="position: relative;">
+                            <div class="controls">
+
+                                <input ng-model="data.userType" ng-value="2" style="margin:0px 0 4px 55px;width: 16px;height: 16px" name="userType" type="radio"  >
+                                <span style="color: black;font-size: 14px;">学生：</span>
+
+                                <input ng-model="data.userType" ng-value="1" style="margin:0px 0 4px 25px;width: 16px;height: 16px" name="userType" type="radio" >
+                                <span  style="color: black;font-size: 14px;">教师：</span>
+
+                            </div>
+                        </div>
+
+                        <div class="control-group" style="position: relative;">
+                            <div class="controls">
+                                <div class="main_input_box">
+                                   <a id="loginBtn" class="btn btn-large btn-primary" ng-click="doLogin()" style="width:225px;">登&nbsp;录</a>
+                                </div>
+
+                                <div style="overflow: hidden;margin: 20px 220px 5px 0px" >
+                                    <a href="register.html" style="float: left;cursor: pointer">注册</a>
+                                    <div style="float: right;cursor: pointer">忘记密码</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+        <img src="dist/imgs/qianbi.png" width="360" height="340" style="width: 360px; height: 340px; float: right;">
+    </div>
+    <input type="hidden" id="callback">
+    <style>
+        input::-ms-clear{display:none;}
+        input::-ms-reveal{display: none;}
+        .inputReset {
+            height:22px;
+            width:22px;
+            background:url('dist/imgs/icon-reset.png') 0 0 no-repeat;
+            display: block;
+            right: 5px;
+            top: 8px;
+            position: absolute;
+        }
+        .inputReset:hover {
+            background-position: 0px -22px;
+        }
+        .warningtip {
+            background-image: url('dist/imgs/icon-warning.png');
+            display: none; background-color: #FBFFCA;
+            background-repeat: no-repeat;
+            background-position: 4px 4px;border:1px solid #ddd;
+            position: absolute;top:10px;margin-left: 280px;margin-top:4px;
+            width:150px;height:26px;line-height: 26px;padding-left:26px;color:#333;
+        }
+    </style>
+
+
+</body></html>
