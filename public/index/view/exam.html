@@ -1,0 +1,135 @@
+<link rel="stylesheet" href="dist/css/exam.css">
+<div class="g-bd f-cb">
+    <div class="g-wrap">
+        <div class="f-cb g-box">
+            <div class="g-mc f-cb">
+                <div class="exam-hd" align="center">
+                    <h2>{{paper.name}}</h2>
+                    <div class="f-toe" style="margin: 0">
+                        <span>考生：{{paper.user.name}}</span>&nbsp;&nbsp;&nbsp;
+                        <span>考试时间：120分钟</span>
+                    </div>
+                </div>
+
+                <div class="exam-bd f-usn" style="padding: 0">
+                    <div class="exam-cnt" ng-repeat="data in datas" style="background: #ffffff">
+                        <div class="u-btn yellow btn-detail-save-collection" style="font-weight: bold;width: 100%;text-align: left">
+                            {{$index+1|toCh}}、{{data.type_name}}（共{{data.num}}小题）
+                        </div>
+                        <ul class="f-cb" style="padding: 10px 25px 50px 25px">
+                            <li class="item" ng-repeat="test in data.tests">
+                                <div class="item-hd f-cb">
+                                    <!-- 题目 -->
+                                    <div >
+                                        {{$index+1}}&nbsp;、&nbsp;{{test.topic.questions}}
+                                    </div>
+
+                                    <!-- 单选 -->
+                                    <div ng-show="data.type==1">
+                                        <div class="option-item "   ng-click="makeAnswer(test.extest_id,'A')">
+                                            <span class="index" ng-class="{'active':test.extest_answer=='A'}">A</span>
+                                            <div class="f-inline">&nbsp;&nbsp;{{test.topic.option.a}}</div>
+                                        </div>
+
+                                        <div class="option-item " ng-show="data.type==1" ng-click="makeAnswer(test.extest_id,'B')">
+                                            <span class="index" ng-class="{'active':test.extest_answer=='B'}">B</span>
+                                            <i class="fa fa-fw fa-dot-circle-o"></i>
+                                            <div class="f-inline">&nbsp;&nbsp;{{test.topic.option.b}}</div>
+                                        </div>
+
+                                        <div class="option-item "  ng-show="data.type==1" ng-click="makeAnswer(test.extest_id,'C')">
+                                            <span class="index" ng-class="{'active':test.extest_answer=='C'}">C</span>
+                                            <div class="f-inline">&nbsp;&nbsp;{{test.topic.option.c}}</div>
+                                        </div>
+
+                                        <div class="option-item "  ng-show="data.type==1" ng-click="makeAnswer(test.extest_id,'D')">
+                                            <span class="index" ng-class="{'active':test.extest_answer=='D'}">D</span>
+                                            <div class="f-inline">&nbsp;&nbsp;{{test.topic.option.d}}</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 多选 -->
+                                    <div ng-show="data.type==2">
+                                        <div class="option-item "   ng-click="makeAnswer(test.extest_id,'A',2)">
+                                            <span class="index" ng-class="{'active':test.extest_answer.A}">A</span>
+                                            <div class="f-inline">&nbsp;&nbsp;{{test.topic.option.a}}</div>
+                                        </div>
+
+                                        <div class="option-item "  ng-click="makeAnswer(test.extest_id,'B',2)">
+                                            <span class="index" ng-class="{'active':test.extest_answer.B}">B</span>
+                                            <i class="fa fa-fw fa-dot-circle-o"></i>
+                                            <div class="f-inline">&nbsp;&nbsp;{{test.topic.option.b}}</div>
+                                        </div>
+
+                                        <div class="option-item "   ng-click="makeAnswer(test.extest_id,'C',2)">
+                                            <span class="index" ng-class="{'active':test.extest_answer.C}">C</span>
+                                            <div class="f-inline">&nbsp;&nbsp;{{test.topic.option.c}}</div>
+                                        </div>
+
+                                        <div class="option-item " ng-click="makeAnswer(test.extest_id,'D',2)">
+                                            <span class="index" ng-class="{'active':test.extest_answer.D}">D</span>
+                                            <div class="f-inline">&nbsp;&nbsp;{{test.topic.option.d}}</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 判断 -->
+                                    <div ng-show="data.type==3">
+
+                                        <span class="index" ng-class="{'active':test.extest_answer=='1'}" ng-click="makeAnswer(test.extest_id,'1')"></span>
+                                        <div class="f-inline" style="margin-right: 25px">&nbsp;&nbsp;正确</div>
+
+                                        <span class="index" ng-class="{'active':test.extest_answer=='0'}" ng-click="makeAnswer(test.extest_id,'0')"></span>
+                                        <div class="f-inline">&nbsp;&nbsp;错误</div>
+                                    </div>
+
+                                    <!-- 填空 -->
+                                    <div ng-show="data.type==4" style="margin-top: 20px">
+                                        答：<input ng-blur="makeAnswer2(test.extest_id,$event)" ng-value="test.extest_answer" style="padding: 2px 8px 2px 8px;width: 400px" >
+                                    </div>
+
+                                    <!-- 解答 -->
+                                    <div ng-show="data.type==5" style="margin-top: 10px">
+                                        <label>解答:</label><br>
+                                        <textarea cols="50" rows="5" ng-blur="makeAnswer2(test.extest_id,$event)" style="padding: 10px">{{test.extest_answer}}</textarea>
+                                    </div>
+
+                                </div>
+                                <div class="item-ft f-dn">
+                                    <span class="text-3">
+                                        答案：A
+                                    </span>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <a class="u-btn normal xs" target="_blank" href="question.html?id=&amp;courseId=">查看解析</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="exam-ft">
+                        <button class="u-btn primary" ng-click="submit()">提交试卷</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="pin-wrapper" style="height: 302px;width: 240px; left: 940px; top: 50px; position: fixed;">
+
+                <div style="margin: 25px 0px 0 11px">
+                    <button class="u-btn green f-fl btn-predownloads" data-flag="0" onclick="window.history.back()" style="width: 228px"><i class="fa fa-download fa-fw"></i>返回</button>
+                </div>
+
+                <div class="g-sd f-cb">
+                    <h4 class="f-cb" id="showEndTime">已答：1</h4>
+                    <div  ng-repeat="data in datas">
+                        <div style="margin:30px 0 0 15px">{{$index+1|toCh}}、{{data.type_name}}</div>
+                        <ul>
+                            <li  ng-class="{'active':test.extest_answer}" ng-repeat="test in data.tests">{{$index+1}}</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

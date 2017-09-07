@@ -85,11 +85,11 @@
             <div class="center">{{pro.name}}</div>
         </div>
 
-        <div class="content">
-            <div class="website" ng-repeat="wbs in pro.website">
-                <label>{{wbs.name}}:</label><a href="{{wbs.url}}">{{wbs.url}}</a>
-            </div>
-        </div>
+        <table class="content">
+            <tr class="website" ng-repeat="wbs in pro.website">
+                <td>{{wbs.name}}</td><td><a target="_blank" href="{{wbs.url}}">{{wbs.url}}</a></td>
+            </tr>
+        </table>
     </div>
 </div>
 

@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="dist/css/preview.css">
+
+<div class="g-wrap">
+    <div class="m-detail-hd">
+        <div class="info">
+            <h4>{{paper.name}}</h4>
+            <p class="f-cb">
+                <!-- <span><b>难度系数：</b>0</span> -->
+                <span><b>科目：</b>{{paper.subject.name}}</span>
+                <span><b>总分：</b>150</span>
+            </p>
+        </div>
+    </div>
+    <div class="m-detail-bd f-cb" style="margin-bottom: 80px">
+        <div class="g-mn">
+            <div ng-repeat="data in datas">
+                <div class="questionType-title f-cb" style="font-weight: bold">
+                    {{$index+1|toCh}}、{{data.type_name}}（共{{data.num}}小题）
+                </div>
+                <ul class="m-list f-cb">
+                    <li class="question-box" ng-repeat="test in data.tests">
+                        <div class="question ue-cnt">
+                            <div style="margin-bottom: 8px">
+                                {{$index+1}}&nbsp;、&nbsp;{{test.topic.questions}}
+                            </div>
+
+                            <!-- 单选题 -->
+                            <div class="option-item" ng-show="data.type==1">
+                                <div>A、{{test.topic.option.a}}</div>
+                            </div>
+
+                            <div class="option-item" ng-show="data.type==1">
+                                <div>B、{{test.topic.option.b}}</div>
+                            </div>
+
+                            <div class="option-item" ng-show="data.type==1">
+                                <div>C、{{test.topic.option.c}}</div>
+                            </div>
+
+                            <div class="option-item" ng-show="data.type==1">
+                                <div>D、{{test.topic.option.d}}</div>
+                            </div>
+
+                        </div>
+                        <div class="opt">
+                            <div class="f-fr">
+
+                                <span>难度系数：</span>
+                                <b>0.37</b>
+                                &nbsp;&nbsp;&nbsp;
+                                <span>分数：</span>
+                                <b>0</b>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sd-right">
+            <div class="pin-wrapper" style="height: 530px;"><div class="g-sd" style="width: 230px;">
+                <a class="u-btn primary-hover larger" ng-show="paper.status==0||paper.status==1"  href="#!/exam"><i class="fa fa-object-group fa-fw"></i>在线答题</a>
+                <a class="u-btn primary-hover larger" ng-show="paper.status==2" href="#!/exam"><i class="fa fa-object-group fa-fw"></i>待阅卷</a>
+                <a class="u-btn primary-hover larger" ng-show="paper.status==3" href="#!/exam"><i class="fa fa-object-group fa-fw"></i>成绩</a>
+                <div class="box">
+                    <p>考生：{{paper.user.name}}</p>
+                    <p>阅卷：陈老师</p>
+                </div>
+                <div class="box">
+                    <p>生成时间： 2016-12-08 </p>
+                    <p>学段：{{paper.subject.grede}}</p>
+                    <p class="btn-comment f-csp">评语：</p>
+                </div>
+                <div class="box box-2 f-cb">
+                    <button class="u-btn green f-fl btn-predownloads" data-flag="0" onclick="window.history.back()"><i class="fa fa-download fa-fw"></i>返回列表</button>
+                    <button class="u-btn yellow f-fr btn-detail-save-collection" data-flag="0" onclick="alert('成功点赞')"><i class="fa fa-star fa-fw"></i>给个赞</button>
+                    <button class="u-btn primary f-fl btn-cor" onclick="window.location.href='#!/home'"><i class="fa fa-times-circle-o fa-fw"></i>返回首页</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

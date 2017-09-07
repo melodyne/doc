@@ -1,0 +1,14 @@
+<div class="pro" ng-repeat="(key,pro) in datas">
+
+    <div class="nav">
+        <div class="pro_num">{{key+1}}</div>
+        <div style="height: 6px"></div>
+        <div class="center">{{pro.name}}</div>
+    </div>
+
+    <table class="content">
+        <tr class="website" ng-repeat="wbs in pro.website">
+            <td>{{wbs.name}}</td><td><a target="_blank" href="{{wbs.url}}">{{wbs.url}}</a></td>
+        </tr>
+    </table>
+</div>

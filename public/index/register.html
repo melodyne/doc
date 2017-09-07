@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://www.tiku.com/sign_up.html -->
+<html lang="zh" class=" "><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">         <!-- 基本配置信息 -->
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+
+
+    <!-- seo 优化部分 -->
+    <meta name="keywords" content="题库,题库网,中小学题库,中小学在线题库,在线试卷库,在线资料库,网络阅卷,在线测试,免费在线组卷,智能组卷,课件,导学案,教案,同步试卷">
+    <meta name="author" content="libiqi">
+    <meta name="email" content="274793580@qq.com">
+    <meta name="Description" content="题库网提供中小学全学科全学段试题,试卷,教案,课件,导学案等资源,为中小学校、教育类企业提供专业的在线教学平台、网络阅评系统、教育机构门户网站、个性化学情分析等产品。">
+
+
+    <!-- 防止缓存 -->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <!-- 微博开放平台 -->
+    <meta property="wb:webmaster" content="4768cbb8f940185b">
+        
+    <title>注册－题库网—全国中小学在线题库、免费在线组卷、在线试卷库、在线资料库、网络阅卷</title>
+
+    <link rel="stylesheet" type="text/css" href="./dist/register/base_369bac9.css">
+    <link rel="stylesheet" type="text/css" href="./dist/register/fundamental_98f218e.css">
+    <link rel="stylesheet" type="text/css" href="./dist/register/layer.ext_1112777.css">
+    <link rel="stylesheet" type="text/css" href="./dist/register/unslider_38feeda.css">
+
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<style>
+    select{
+        width:100%;
+        height:33px;
+        border:1px solid #e6e6e6;
+        padding-left: 5px;
+    }
+</style>
+<body  ng-app="myApp" ng-controller="siteCtrl">
+
+<div class="g-hd">
+	<div class="g-top">
+		<div class="g-wrap">
+			<div class="f-fl f-cb">
+				<span><i class="icon icon-tel"></i>服务热线：<b>4000-331-662</b></span>
+				<div class="noti">
+					<div class="unslider"><div class="notice-slide unslider-vertical" style="position: relative; overflow: hidden; height: 40px;">
+						<ul class="notice-list unslider-wrap unslider-carousel" style="height: 400%; top: 0%;">
+                            <li class="unslider-active" style="height: 25%;">
+                                <a  href="" class="s-dft-a-1"><i class="icon icon-tip"></i>今日新增【初中英语】1224道 2017/04/08</a>
+                            </li>
+                        </ul>
+			   		</div></div>
+		   		</div>
+			</div>
+			<div class="f-fr">
+                <a class="u-btn primary" href="login.html">登录</a>
+            </div>
+		</div>
+	</div>
+
+	</div>
+ 		<div class="g-bd f-cb">
+            <div class="g-wrap">
+    <div class="m-box">
+        <h3 class="title">快速注册（{{role==2?'学生':'老师'}}）</h3>
+        <div class="box-bd">
+            <div class="f-cb m-ul-item">
+                <div class="item u-teh" ng-click="choiceRole(1)">
+                    <img class="img img-no" ng-class={'f-dn':role!=2} src="./dist/register/teacher.png">
+                    <img class="img img-a" ng-class={'f-dn':role==2} src="./dist/register/teacher-a.png">
+                    <br>
+                    <span ng-class={'active':role!=2}>[ 教师 ]</span>
+                </div>
+                <div class="item u-stu" ng-click="choiceRole(2)">
+                    <img class="img img-no" ng-class={'f-dn':role==2} src="./dist/register/student.png">
+                    <img class="img img-a" ng-class={'f-dn':role!=2} src="./dist/register/student-a.png">
+                    <br>
+                    <span ng-class={'active':role==2}>[ 学生 ]</span>
+                </div>
+            </div>
+            <div class="m-form">
+                <form id="register-form"><input type="hidden" name="personType" value="1">
+
+                    <div class="formitm">
+                        <label class="lab">学段<font color="red">*</font></label>
+                        <div class="ipt">
+                            <select ng-model="data.xueduan">
+                                <option value="1">小学</option>
+                                <option value="2">初中</option>
+                                <option value="3">高中</option>
+                                <option value="4">大学</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="formitm" ng-show="role!=2">
+                        <label class="lab" >任教学科<font color="red">*</font></label>
+                        <div class="ipt">
+                            <select ng-model="subj" ng-options="x.name for x in subs"></select>
+                        </div>
+                    </div>
+                    <div class="formitm">
+                        <label class="lab">手机／邮箱<font color="red">*</font></label>
+                        <div class="ipt">
+                            <input class="u-ipt phml" type="text" ng-model="data.account" datatype="em" name="personCode">
+                        </div>
+                    </div>
+                    <div class="formitm">
+                        <label class="lab">密码<font color="red">*</font></label>
+                        <div class="ipt">
+                            <input class="u-ipt psdw" type="password" ng-model="data.pwd" datatype="up{5,16}" name="personPassword" id="psdw">
+                        </div>
+                    </div>
+                    <div class="formitm">
+                        <label class="lab">确认密码<font color="red">*</font></label>
+                        <div class="ipt">
+                            <input  ng-model="confirmPwd" class="u-ipt comf" type="password">
+                        </div>
+                    </div>
+                    <div class="formitm">
+                        <label class="lab" for="name">姓名<font color="red">*</font></label>
+                        <div class="ipt">
+                            <input class="u-ipt name" type="text" ng-model="data.name" datatype="name{2,16}" name="realName" id="name">
+                        </div>
+                    </div>
+
+                    <div class="formitm formitm-1">
+                        <a class="u-btn primary larger" id="btn-submit" ng-click="register()">提交</a>
+                    </div>
+                    <div class="formitm formitm-1">
+                        <p class="tip">
+                            <input ng-model="agree" errmsg="请接受服务条款与协议" value="1" datatype="*" type="checkbox" id="agree" checked="checked">
+                            <label for="agree">我已经阅读并接受<a class="a-tk" target="_blank" >《服务条款与协议》</a></label>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('siteCtrl', function($scope, $http) {
+        $scope.role=1;//默认选老师
+        //获取科目
+        $http.get('/api/user/getSubs').then(function (resp) {
+            if(resp['data']['code']==100){
+                $scope.subs = resp['data']['data'];
+            }
+
+        })
+        //选择角色
+        $scope.choiceRole= function (role) {
+            $scope.role=role;
+            if(role==2){
+                $scope.data['teach_sub_id']=null;
+            }
+        }
+        //注册
+        $scope.register=function () {
+
+            if(!$scope.data){
+                alert("你什么都没有输入哦！");
+                return ;
+            }
+            if(!$scope.data['xueduan']){
+                alert("你还没有选择学段哦！");
+                return ;
+            }
+
+            if(!$scope.subj&&$scope.role==1){
+                alert("你还没有选择任教学科哦！");
+                return ;
+            }
+
+            if(!$scope.data['account']){
+                alert("你还没有输入手机号或者邮箱哦！");
+                return ;
+            }
+
+            if(!$scope.data['pwd']){
+                alert("你还没有输入密码哦！");
+                return ;
+            }
+            if($scope.data['pwd'].length!=6){
+                alert("密码只能为6位字符！");
+                return ;
+            }
+
+            if($scope.confirmPwd!=$scope.data['pwd']){
+                alert("确认密码不一致！");
+                return ;
+            }
+
+            if(!$scope.data['name']){
+                alert("你还没有输入姓名哦！");
+                return ;
+            }
+
+            if($scope.data['name'].length<2){
+                alert("姓名不合法");
+                return ;
+            }
+
+            if(!$scope.agree){
+                alert("请接受服务条款！");
+                return ;
+            }
+
+            $scope.data['user_type']=$scope.role;
+            if($scope.subj){
+                $scope.data['teach_sub_id']=$scope.subj['sub_id'];
+            }
+
+            $http.post('/api/user/register',$scope.data).then(function (resp) {
+                if(resp['data']['code']==100){
+                    alert("注册成功！");
+                    history.go(-1);
+                }else {
+                    alert(resp['data']['msg'])
+                }
+            })
+        }
+    });
+</script>
+</body>
+</html>
