@@ -1,18 +1,21 @@
 <form action="javascript:void(0)" method="post">
     <div>
-        <label>项目名称：</label><input name="pro_name">
+        <label>项目名称：</label><input name="pro_name" value="{$model.name}">
     </div>
     <div class="web_pan">
+        {volist name='model.website' id='web'}
         <div>
-            <label>网站名：</label><input name="web_name"><label>网址：</label><input name="web_url">
-            <img onclick="deleteItem(this)" width="30px" src="/static/imgs/delete.png">
+            <input name="web_id" type="hidden" value="{$web.web_id}">
+            <label>网站名：</label><input name="web_name" value="{$web.name}">
+            <label>网址：</label><input style="width: 400px" name="web_url" value="{$web.url}">
+            <img onclick="deleteItem(this,'{$web.web_id}')" width="30px" src="/static/imgs/delete.png">
         </div>
+        {/volist}
     </div>
 
-    <div>
+    <div  style=" margin-top: 15px">
         <img title="添加导航网站" onclick="addWeb()" width="30px" src="/static/imgs/add.png">
     </div>
-    <input type="submit" onclick="save()" value="提交">
 </form>
 <script>
     function addWeb() {
@@ -20,36 +23,74 @@
                 ' <div>'
                   +'<label>网站名：</label><input name="web_name">'
                   +'<label>网址：</label><input name="web_url">'
-                  +' <img onclick="deleteItem(this)" width="30px" src="/static/imgs/delete.png">'
+                  +' <button onclick="save(this,{$model.pro_id})" >新增</button> '
+                  +'<img onclick="deleteItem(this,0)" width="30px" src="/static/imgs/delete.png">'
                 +'</div>'
         $(".web_pan").append(html);
     }
 
-    function deleteItem(e) {
-        $(e).parent().remove();
+    function deleteItem(e,id) {
+        if(id==0){
+            $(e).parent().remove();
+            return;
+        }
+        if(confirm("删除不能恢复，是否确认删除！")){
+            $.get('/admin/website/delete/id/'+id,function (result) {
+                if(result['code']==1){
+                    $(e).parent().remove();
+                } else {
+                    alert(result['msg']);
+                }
+            });
+        }
     }
     
-    function save() {
-        var proName = $('input[name=pro_name]').val();
-        var params = {pro_name:proName,web_list:[]};
-
-        $('input[name=web_name]').each(function(i){
-            params['web_list'][i] = {name:$(this).val(),url:null}
-        });
-        $('input[name=web_url]').each(function(i){
-            params['web_list'][i]['url'] = $(this).val();
-        });
-
-        console.log(params);
-        $.post('/admin/project/save',params,function (result,status) {
-            console.log(result);
-            if(result['code']==100){
-                alert("成功！");
-                location.href = '/';
+    function save(e,proId) {
+        var webName = $(e).siblings('input[name=web_name]').val();
+        var webUrl = $(e).siblings('input[name=web_url]').val();
+        var params = {pro_id:proId,name:webName,url:webUrl};
+        $.post('/admin/website/save',params,function (result,status) {
+            if(result['code']==1){
+                $(e).next().attr('onclick','deleteItem(this,'+result['data']['web_id']+')');
+                $(e).remove();
             } else {
                 alert(result['msg']);
             }
-
         })
+    }
+    $("input").blur(function(){
+
+        var input = $(this);
+        var id = input.siblings('input[name=web_id]').val();
+        var inputName = input.attr("name");
+        var inputVal = input.val();
+        var params = {};
+
+        if(id){
+            if(inputName=='web_name')params['name'] = inputVal;
+            if(inputName=='web_url'){
+                if(!isURL(inputVal)){
+                    alert("网址无效！");
+                    input.css('background-color','#FFC0CB');
+                    return;
+                }
+                params['url'] = inputVal;
+            }
+            input.css('background-color','#FFFFFF');
+            $.post('/admin/website/update/id/'+id,params,function () {});
+        }else {
+            if(inputName=='pro_name'){
+                $.post('/admin/project/update/id/{$model.pro_id}',{name:inputVal},function () {})
+            }
+        }
+    });
+    function isURL(url) {
+        var strRegex = "^((https|http|ftp|rtsp|mms)://)?[a-z0-9A-Z]{3}\.[a-z0-9A-Z][a-z0-9A-Z]{0,61}?[a-z0-9A-Z]\.com|net|cn|cc (:s[0-9]{1-4})?/$";
+        var re = new RegExp(strRegex);
+        if (re.test(url)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 </script>

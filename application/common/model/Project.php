@@ -6,12 +6,10 @@
  * Time: 15:22
  */
 
-namespace app\admin\model;
+namespace app\common\model;
 use think\Model;
-use app\common\model\Project as ProjectModel;
 
-
-class Project extends ProjectModel
+class Project extends Model
 {
     public function website(){
         return $this->hasMany('Website','pro_id','pro_id');

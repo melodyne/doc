@@ -8,7 +8,7 @@
 
 namespace app\admin\controller;
 
-use common\controller\AdminController;
+use app\common\controller\AdminController;
 use think\Db;
 use think\Request;
 
@@ -16,7 +16,6 @@ use app\admin\model\Project as ProjectModel;
 
 class Project extends AdminController
 {
-    protected $modelClass = 'common\model\Project';
     protected $with = 'website';
 
     protected $rule = [
@@ -67,39 +66,12 @@ class Project extends AdminController
         $this->success("新增成功！","/index");
     }
 
-    public function update($id)
+    public function edit($id)
     {
-        $param = Request::instance()->param();
-
-        $this->validate($param, $this->rule, $this->msg);
-
-        foreach ($param['web_name'] as $i => $name) {
-            $webList[$i]['web_id'] = $param['web_id'][$i];
-            $webList[$i]['name'] = $name;
-            $webList[$i]['url'] = $param['web_url'][$i];
-            $this->validate($webList[$i], $this->rule2, $this->msg2);
-        }
-
-        $m = ProjectModel::get($id);
-        $m->name = $param['pro_name'];
-        $m->save();
-        if($m->website()->saveAll($webList)){
-            $this->success("修改成功！","/index");
-        }
-
-
-        // 启动事务
-        Db::startTrans();
-        try{
-            Db::table('think_user')->find(1);
-            Db::table('think_user')->delete(1);
-            // 提交事务
-            Db::commit();
-        } catch (\Exception $e) {
-            // 回滚事务
-            Db::rollback();
-        }
-
-        $this->error("修改失败！");
+        $model = $this->findModel($id);
+        $model->website;
+        $this->assign('model',$model);
+        return $this->fetch();
     }
+
 }

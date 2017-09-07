@@ -7,7 +7,7 @@
  */
 
 namespace app\admin\model;
-use common\model\Website as WebsiteModel;
+use app\common\model\Website as WebsiteModel;
 
 
 class Website extends WebsiteModel

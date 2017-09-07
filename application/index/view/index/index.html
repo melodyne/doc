@@ -77,10 +77,12 @@
 </div>
 
 <div class="container">
-    <div class="pro" ng-repeat="pro in datas">
+    <div class="pro" ng-repeat="(key,pro) in datas">
 
         <div class="nav">
-            <label>{{pro.name}}</label>
+            <div class="pro_num">{{key+1}}</div>
+            <div style="height: 6px"></div>
+            <div class="center">{{pro.name}}</div>
         </div>
 
         <div class="content">
