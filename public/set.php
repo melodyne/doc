@@ -528,6 +528,5 @@ function add_host() {
 			
 		</div>
 	</div>
-	<?php require_once 'public/footer.php';?>
 </body>
 </html>
