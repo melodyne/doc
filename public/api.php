@@ -1,6 +1,6 @@
 <?php
-require_once 'inc/db.php';
-require_once 'inc/Mode.php';
+require_once '../inc/db.php';
+require_once '../inc/Mode.php';
 $menus = exesql("select * from menus order by priority asc");
 if (isset($_GET['docid']) && ! empty($_GET['docid'])) {
     $apiId = $_GET['docid'];
@@ -8,7 +8,6 @@ if (isset($_GET['docid']) && ! empty($_GET['docid'])) {
 }else{
     $apiInf=array();
 }
-require_once 'public/header.php'
 ?>
 <script src="/public/json_view/js/c.js" type="text/javascript"></script>
 <link href="/public/json_view/css/s.css" type="text/css" rel="stylesheet"></link>
@@ -276,4 +275,3 @@ require_once 'public/header.php'
 
 	   </div>
        <!-- 右边结束 -->
-<?php require_once 'public/footer.php';?>

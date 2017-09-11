@@ -29,7 +29,6 @@ html, body {
 /*注：Content-Left和Content-Main元素是Content元素的子元素，两个元素使用了float:left;设置成两列，这个两个元素的宽度和这个两个元素设置的padding、margin的和一定不能大于父层Content元素的宽度，否则设置列将失败*/
 #Footer{
     height:40px;
-    margin-top:20px;
 }
 .Clear{
     clear:both;

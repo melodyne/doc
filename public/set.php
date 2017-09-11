@@ -1,9 +1,9 @@
 <?php
-require_once 'inc/db.php';
-$menus = exesql("select * from menus order by priority asc");
-$authors = exesql("select * from authors");
-$mylink = exesql("select * from links order by priority asc");
-$hosts = exesql("select * from hosts");
+require_once '../inc/db.php';
+$menus = exesql("select * from doc_menus order by priority asc");
+$authors = exesql("select * from doc_authors");
+$mylink = exesql("select * from doc_links order by priority asc");
+$hosts = exesql("select * from doc_hosts");
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
@@ -309,7 +309,6 @@ function add_host() {
 </head>
 
 <body>
-	<?php require_once 'public/menu.php'?>
   <div id="container">
 		<div id="contents" style="margin: 10px 100px 10px 100px;">
 			<div class="set_menu">

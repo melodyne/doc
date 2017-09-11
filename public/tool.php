@@ -1,6 +1,5 @@
-﻿<?php require_once 'public/header.php';?>
-<script src="/public//json_view/js/c.js" type="text/javascript"></script>
-<link href="/public/json_view/css/s.css" type="text/css" rel="stylesheet"></link>
+﻿<script src="/json_view/js/c.js" type="text/javascript"></script>
+<link href="/json_view/css/s.css" type="text/css" rel="stylesheet"></link>
 <div style="margin:20px 50px 260px 50px;">
     <div class="HeadersRow">
       <h3 id="HeaderSubTitle">云宿API文档工具-JSON格式化</h3>
@@ -48,7 +47,6 @@
     <div id="Canvas" class="Canvas"  ondblclick="selectText('Canvas')" ></div>
 </div>
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
-<script type="text/javascript" src="/public/json_view/js/m.js"></script>
+<script type="text/javascript" src="/json_view/js/m.js"></script>
 
-<?php require_once 'public/footer.php';?>
 
