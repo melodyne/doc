@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="908ae880-d5c4-4d16-9407-9d492dbff490" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/inc/Config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/inc/Mode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/inc/db.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/interface/AddApiDoc.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/interface/ApiMode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/interface/DelApiDoc.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/interface/UpdApiDoc.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/interface/add.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/interface/del.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/interface/getParameters.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/interface/getRerult.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/interface/select_article.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../doc/application/interface/update.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../doc/.idea/modules.xml" afterPath="$PROJECT_DIR$/../doc/.idea/modules.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../doc/.idea/nav.iml" afterPath="$PROJECT_DIR$/../doc/.idea/doc.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../doc/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../doc/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../doc/public/yunsu_nav.sql" afterPath="$PROJECT_DIR$/../doc/public/yunsu_nav.sql" />
     </list>
     <list id="a4c8e323-6c7c-43cd-ac91-ae574f710df5" name="ee" comment="" />
     <ignored path="nav.iws" />
@@ -269,8 +254,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="30" />
+    <option name="y" value="28" />
     <option name="width" value="1616" />
     <option name="height" value="876" />
   </component>
@@ -317,6 +302,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -342,11 +341,11 @@
       <recent name="D:\xampp\htdocs\nav\application" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\doc\public" />
       <recent name="D:\xampp\htdocs\nav\public" />
       <recent name="D:\xampp\htdocs\nav\application" />
       <recent name="D:\xampp\htdocs\nav\config\admin" />
       <recent name="D:\xampp\htdocs\nav\extend\common" />
-      <recent name="D:\xampp\htdocs\nav\config" />
     </key>
   </component>
   <component name="RunManager">
@@ -440,7 +439,7 @@
       <workItem from="1504852178130" duration="624000" />
       <workItem from="1504854285728" duration="496000" />
       <workItem from="1505090828315" duration="1895000" />
-      <workItem from="1505113014449" duration="11852000" />
+      <workItem from="1505113014449" duration="12043000" />
     </task>
     <task id="LOCAL-00001" summary="添加了富文本编辑器">
       <created>1504747741737</created>
@@ -491,19 +490,26 @@
       <option name="project" value="LOCAL" />
       <updated>1505124758208</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="提交个版本吧">
+      <created>1505124962039</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1505124962039</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137422000" />
+    <option name="totallyTimeSpent" value="137613000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="30" y="28" width="1616" height="876" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23521851" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23521851" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839838" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74024224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -558,7 +564,8 @@
     <MESSAGE value="整合了doc项目" />
     <MESSAGE value="完成首页优化" />
     <MESSAGE value="修改了设置页" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了设置页" />
+    <MESSAGE value="提交个版本吧" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交个版本吧" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
