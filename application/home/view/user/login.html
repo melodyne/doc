@@ -1,0 +1,61 @@
+<!-- 左边开始 -->
+<div id="Content-Left">
+  {include file="left" /}
+</div>
+<!-- 左边结束 -->
+
+<!-- 右边开始 -->
+<div id="Content-Main">
+
+  <div align="right" >{$loginInfo}</div>
+  <div align="center" style="margin:80px 0px 300px 0px;">
+        <form class="login-form" action="../../api/user/login" method="post">
+            <input type="text" name="account" placeholder="请输入用户名" ><br><br>
+            <input type="password" name="password" placeholder="请输入密码"><br><br>
+        </form>
+        <button onclick="login()">登 陆</button>
+        <button onclick="">注册</button>
+        &nbsp; &nbsp; &nbsp;<a>忘记密码</a>
+  </div>
+  <script type="text/javascript">
+    function login(){
+        var iaco=$('input[name="account"]');
+        var ipaw=$('input[name="password"]');
+        
+        var account=$.trim(iaco.val());
+        var password=$.trim(ipaw.val());
+    
+        if(account.length<2){
+          iaco.focus();
+          alert("请输入2-20位字符的账户");
+          return;
+        }
+
+        if(password.length<6||password.length>15){
+          ipaw.focus();
+          alert("请输入6-15位字符的密码");
+          return;
+        }
+
+        var paras={account:account,password:password};
+        $.post("../../api/user/login",paras,
+        function(data,status){
+          alert("数据：" + data['msg'] + "\n状态：" + status);
+          if(data['code']==100){
+            window.location.href="";
+          }
+        }
+    );
+  }
+function logout(){
+   $.get("../../api/user/logout",
+        function(data,status){
+          alert("数据：" + data['msg'] + "\n状态：" + status);
+          if(data['code']==100){
+            window.location.href="";
+          }
+        });
+}
+
+</script>
+</div>

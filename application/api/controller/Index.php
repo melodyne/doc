@@ -1,26 +1,15 @@
 <?php
-namespace app\api\controller;
+namespace app\home\controller;
+
 use think\Controller;
-use app\index\model\Project as ProjectModel;
-use app\index\model\Website as WebsiteModel;
+use app\home\model\Links as LinksModel;
 
 class Index extends Controller
 {
     public function index()
     {
-        $model = ProjectModel::all();
-        foreach ($model as $m){
-            $m->website;
-        }
-        return json($model);
+		$list = LinksModel::all();
+		$this->assign("linksList",$list);
+        return $this->fetch();
     }
-
-    public function getList()
-    {
-        $model = ProjectModel::all();
-        return json($model);
-    }
-
-
-
 }

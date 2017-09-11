@@ -1,0 +1,154 @@
+@charset "utf-8";
+/* CSS Document */
+.showday tr td{
+	
+	width: 30px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+}
+
+.show_task{
+     min-width:950px;
+     overflow:hidden;
+     clear: both;
+}
+
+td span{
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+    cursor: pointer;
+    background:#ccc;
+    color: #ffffff;
+    text-align: center;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+	display:-moz-inline-box; 
+	display:inline-block; 
+}
+.onwork{
+    background: #76EE00;
+}
+.onwork:hover{
+	background: #FF5F3E;
+}
+.today{
+    background: #FF5F3E;
+}
+
+#round-none {
+    padding:10px;
+    border: 2px solid #dedede;
+    -moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.round-yellow {
+    padding:10px;
+    background:#FC9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+}
+.round-white {
+	height: 300px;
+	width: 44%;
+	border: 2px solid #EDEDED;
+	margin: 0px 0px 8px 8px;
+    padding:10px 15px 3px 15px;
+    background:#ffffff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    float: left;
+}
+
+.developer{
+    color: #5d9cec;
+    font-size: 15px;
+    font-family: 微软雅黑;
+    font-weight: bold ;
+    margin: 10px 0px 10px 0px;
+}
+.task tr td{
+     height:30px; 
+     font-size: 15px;
+     font-family: 微软雅黑;
+}
+.progress{
+    display:inline-block;
+    width: 32px;
+    text-align: center;
+    color: #2dc3e8;
+    border: 1px solid #2dc3e8;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius:2px;
+    padding: 0px 5px 0px 5px;
+    font-size: 12px;
+    margin:0px 10px 0px 10px
+}
+
+/*添加任务页*/
+
+.taskcommit{
+    padding: 8px 12px 8px 12px;
+    background: #00CD00;
+    color: white;
+    font-weight: bold;
+    font-family: 微软雅黑;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius:2px;
+}
+.taskcommit:hover{
+     background: #76EE00; 
+}
+.nocommit{
+    padding: 8px 12px 8px 12px;
+    background: #FF4500;
+    color: white;
+    font-weight: bold;
+    font-family: 微软雅黑;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius:2px;
+}
+.nocommit:hover{
+   background: #FF5F3E; 
+}
+
+.paras_title{
+    height: 28px;
+}
+
+.noworkday{
+    height: 260px;
+    line-height: 200px;
+    margin-bottom: 200px;
+    font-style: 微软雅黑;
+    font-weight: bold;
+    color: #FF5F3E;
+    font-size: 20px;
+    text-align: center;
+}
+
+.triangle-up {
+    width: 0;
+    height:0;
+    border-left: 10px solid #F8F8F8;
+    border-right: 10px solid #F8F8F8;
+    border-bottom: 12px solid #FF5F3E;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius:0px;
+    position: relative;
+    top: -5px;
+}
+
+.follow-up{
+    background: #ffffff;
+    color: #8E8E8E;
+}

@@ -1,0 +1,75 @@
+ <!-- 左边开始 -->
+<div id="Content-Left">
+	{include file="left" /}
+</div>
+<!-- 左边结束 -->
+
+<!-- 右边开始 -->
+<div id="Content-Main">
+	<table class="showday">
+		<tr>
+		<td style="line-height: 23px;">2016<br>10月</td>
+		{volist name="dayarr" id="item" }
+		   
+		        {if condition="$item.day<=date('d')"} 
+		            {if condition="$item['week'] eq '六'|| $item['week'] eq '日' "}
+					    <td>{$item.week}<br><span>{$item.day}</span></td>
+					{else}
+					    <td>{$item.week}<br><span onclick="show('{$year}','{$month}','{$item.day}')" class="onwork">{$item.day}</span></td>
+					{/if}
+		   		
+		        {else}
+		            <td>{$item.week}<br><span class="follow-up">{$item.day}</span></td>
+		        {/if}
+		   
+		{/volist}
+		
+		</tr> 
+		<tr style="height:12px">
+		<td></td>
+		{volist name="dayarr" id="item" }
+		    {if condition="$item['day'] eq $openday"}
+		   	<td><span class="triangle-up"></span></td>
+		   	{else}
+		   	<td></td> 
+		   	{/if}   
+		{/volist}
+		
+		</tr> 
+	</table>
+	<div class="show_task">
+	{if condition="$todayTasks"}
+	{volist name="todayTasks" id="item" }
+		<div class="round-white">
+			<div class="developer">{$item['user']['authname']}</div>
+			{if condition="$item['tasks']"}
+			<div  style='width:432px;height:260px;overflow:auto;'>
+			<table class="task">
+			    {volist name="$item['tasks']['describe']" id="item2" }
+			    <tr>
+					<td width="10px">{$key+1}</td>
+					<td width="65px">{$item2['type']}</td>
+					<td>{if condition="$item2['module']!='无'"}{$item2['module']}-{/if} {$item2['task']}<label class="progress">{$item2['progress']}%</lable>
+				</tr>
+			    {/volist}
+			</table>
+			</div>
+			{else}
+			<div>该开发者还没有提交当日工作任务</div>
+            {/if}
+		</div>
+	{/volist}
+	{else}
+		<div class="noworkday">对不起，今天不是工作日，请查看其他时间的工作任务！</div>
+	{/if}		
+	</div>
+
+</div>
+
+<script type="text/javascript">
+function show(year,month,day){
+	alert(year+month+day);
+	location.href="show?mc=1&y="+year+"&m="+month+"&d="+day;
+}
+</script>
+<!-- 右边结束 -->

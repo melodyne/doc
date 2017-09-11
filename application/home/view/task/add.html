@@ -1,0 +1,69 @@
+<!-- 左边开始 -->
+<script src="/public/home/js/task.js"></script>
+<div id="Content-Left">
+	{include file="left" /}
+</div>
+<!-- 左边结束 -->
+
+<!-- 右边开始 -->
+<div id="Content-Main">
+
+	<div class="round-none">
+           <div class="vi">
+               <lable>今日任务</lable>
+            </div>
+            <hr style="height:1px;border:none;border-top:1px dashed #ccc;">
+            <table id="tasks" {$taskid} style="text-align:center">
+	            <tbody  id="paras">
+		            
+		             {if condition="$taskList==null"}
+			             <script type="text/javascript">
+			             	addTask();
+			             	addTask();
+			             </script>
+		             {else}
+			             <tr class="paras_title">
+				             <th width="41px">序号</th>
+				             <th width="100px">类型</th>
+				             <th width="100px">模块</th>
+				             <th width="350px">任务名称</th>
+				             <th width="100px">进度</th>
+				             <th></th>
+			             </tr>
+		             {volist name="taskList" id="item" }
+                         <tr class="paraval">
+				             <td><div class="xuhao">{$key+1}</div></td>
+				             <td>  
+				             	<select name="type" style="width: 80px;height:21px;">
+				             	     <option value=""></option>
+						             <option {if condition="$item['type'] eq '新增功能'"} selected="true" {/if} value="新增功能">新增功能</option>
+						             <option {if condition="$item['type'] eq '新增界面'"} selected="true" {/if} value="新增界面">新增界面</option>
+						             <option {if condition="$item['type'] eq '完善功能'"} selected="true" {/if} value="完善功能">完善功能</option>
+						             <option {if condition="$item['type'] eq '美化界面'"} selected="true" {/if} value="美化界面">美化界面</option>
+						             <option {if condition="$item['type'] eq '删隐功能'"} selected="true" {/if} value="删隐功能">删隐功能</option>
+						             <option {if condition="$item['type'] eq 'bug优化'"} selected="true" {/if} value="bug优化">bug优化</option>
+						             <option {if condition="$item['type'] eq '软件测试'"} selected="true" {/if} value="软件测试">软件测试</option>
+						             <option {if condition="$item['type'] eq '搭建框架'"} selected="true" {/if} value="搭建框架">搭建框架</option>
+						             <option {if condition="$item['type'] eq '文档学习'"} selected="true" {/if} value="文档学习">文档学习</option>
+						             <option {if condition="$item['type'] eq '其它'"} selected="true" {/if} value="其它">其它</option>
+					             </select>
+					         </td>
+				             <td><input  name="module" value="{$item['module']}" style="width: 80px;"></td>
+				             <td><input name="task" value="{$item['task']}" style="width: 300px;"></td>
+				             <td><input name="progress" value="{$item['progress']}" style="width: 50px;text-align:center"></td>
+				             <td><img onclick="removeHtml(this)" width="20px" src="/public/home/images/del.png"></td>
+			             </tr>
+                    {/volist}
+
+		            {/if}
+		            
+	             </tbody>
+            </table>
+			<div class="addpara" style="margin-top:10px"><img onclick="addTask()" width="37px" src="/public/home/images/add.jpg"></div>
+			<div align="right" style="width:700px;margin:80px 0px 200px 0px">
+				<label onclick="taskcommit()" class="taskcommit">提交任务</label>
+				<label class="nocommit" onclick="nocommit()">放弃提交</label>
+			</div>
+       </div>
+</div>
+<!-- 右边结束 -->

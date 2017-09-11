@@ -10,7 +10,7 @@ angular.module('myApp.home', ['ngRoute'])
 }])
 
 .controller('HomeCtrl', function($scope,$http) {
-  $http.get("/api/index/index").then(function (response) {
+  $http.get("/api/project/index").then(function (response) {
     $scope.datas = response['data'];
   });
 });

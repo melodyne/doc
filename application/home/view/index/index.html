@@ -1,0 +1,51 @@
+﻿<style type="text/css">
+.left {
+	float: left;
+	width: 60%;
+	height: 90%;
+}
+
+.right {
+	float: right;
+	width: 40%;
+	height: 90%;
+	text-align: center;
+}
+
+.content {
+    width:80%;
+	height:600px;
+	margin:0px auto;
+}
+
+.tishi {
+	margin: 70px;
+	text-align: center;
+	color: red;
+}
+
+a {
+	text-decoration: underline;
+}
+
+.list_cont {
+	margin: 15px;
+}
+</style>
+<div class="content">
+	<div class="left">
+	{volist name="linksList" id="link" }
+		<div class="list_cont">
+			{$link.lkname}&nbsp;<a clsass target="_blank"
+				href="http://{$link.lkurl}">http://{$link.lkurl}</a>
+		</div>
+	{/volist}
+	</div>
+
+	<div class="right">
+		<div style="margin: 30px;">
+			<img width="200px" src="css/app.png">
+			<div style="text-align: center; margin-top: 20px;">测试APP二维码</div>
+		</div>
+	</div>
+</div>

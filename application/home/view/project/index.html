@@ -1,0 +1,46 @@
+<link href="/public/home/css/basic.css" rel="stylesheet" type="text/css">
+<link href="/public/home/css/left.css" rel="stylesheet" type="text/css">
+<link href="/public/home/css/task.css" rel="stylesheet" type="text/css">
+<script src="/public/home/js/left.js"></script>
+
+<ul class="pro_left_nav">
+	{volist name="projects" id="pro"}
+	<li><a {if condition="$key eq '0'"}class="hover"{/if} href="{$pro.url}" target="iframe_a">{$pro.name}</a></li>
+	{/volist}
+	<div align="center" style="line-height: 50px;color: #00AA00;font-weight: bold">全屏</div>
+	<div id="lanPos"></div>
+</ul>
+
+<iframe id="iframe_a" name="iframe_a" frameborder="0" src="/example/html/demo_iframe.html" ></iframe>
+
+<style>
+	.pro_left_nav{
+		width: 180px;
+		left: 760px;
+		position: absolute;
+	}
+	#lanPos{
+		width: 215px;
+		height: 44px;
+		background-color: #ececec;
+	}
+
+	ul li{
+		border-bottom: 1px solid #ececec;
+	}
+	iframe{
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 600px;
+	}
+</style>
+<script>
+	$("#iframe_a").height($(window).height()-65);
+    $(window).load(function(){
+        $("#Footer").remove();
+    });
+    window.onresize = function(){
+        $("#iframe_a").height($(window).height()-65);
+    }
+</script>

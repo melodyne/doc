@@ -1,0 +1,15 @@
+<link href="/public/home/css/basic.css" rel="stylesheet" type="text/css">
+<link href="/public/home/css/left.css" rel="stylesheet" type="text/css">
+<link href="/public/home/css/task.css" rel="stylesheet" type="text/css">
+<script src="/public/home/js/left.js"></script>
+
+<ul>
+	<li><a {if condition="$_GET['mc'] eq '1'"}class="hover"{/if} href="../task/show?mc=1">全体日报</a></li>
+	<li><a {if condition="$_GET['mc'] eq '2'"}class="hover"{/if} href="#">个人日报</a></li>
+	<li><a {if condition="$_GET['mc'] eq '3'"}class="hover"{/if} href="../task/add?mc=3">添加任务</a></li>
+	<li><a {if condition="$_GET['mc'] eq '4'"}class="hover"{/if} href="#">任务分析</a></li>
+	<li><a {if condition="$_GET['mc'] eq '5'"}class="hover"{/if} href="#">项目进度</a></li>
+	<li><a {if condition="$_GET['mc'] eq '6'"}class="hover"{/if} href="../user/login?mc=6">用户登录</a></li>
+	<li><a {if condition="$_GET['mc'] eq '7'"}class="hover"{/if} href="#">偏好设置</a></li>
+	<div id="lanPos"></div>
+</ul>	

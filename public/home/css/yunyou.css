@@ -1,0 +1,195 @@
+@CHARSET "UTF-8";
+
+html, body {
+	height: 97%;
+	margin: 0px;
+}
+/* 布局样式开始*/
+#Container{
+    width:100%;
+	min-width:1000px;
+    margin:0 auto;/*设置整个容器在浏览器中水平居中*/
+}
+
+#Content{
+	min-width: 1200px;
+    overflow:auto;
+}
+#Content-Left{
+    width:200px;
+    margin:20px;/*设置元素跟其他元素的距离为20像素*/
+    float:left;/*设置浮动，实现多列效果，div+Css布局中很重要的*/
+}
+#Content-Main{
+    width:70%;
+	min-width:700px;
+    margin:20px;/*设置元素跟其他元素的距离为20像素*/
+    float:left;/*设置浮动，实现多列效果，div+Css布局中很重要的*/
+}
+/*注：Content-Left和Content-Main元素是Content元素的子元素，两个元素使用了float:left;设置成两列，这个两个元素的宽度和这个两个元素设置的padding、margin的和一定不能大于父层Content元素的宽度，否则设置列将失败*/
+#Footer{
+    height:40px;
+    margin-top:20px;
+}
+.Clear{
+    clear:both;
+}
+
+/* 布局样式结束*/
+
+
+#top {
+	margin: 0px;
+	width: 100%;
+	height: 65px;
+	line-height: 65px;
+	background: #76EE00;
+}
+
+#top_title {
+	float: left;
+	width: 30%;
+	color: #ffffff;
+	font-size: 23px;
+}
+
+#top_daohang {
+	float: right;
+	width: 50%;
+	font-size: 18px;
+}
+#top_daohang a {
+	text-decoration: none;
+}
+
+#bottom {
+	margin: 0px;
+	width: 100%;
+	height: auto;
+	padding: 10px 0;
+	text-align: center;
+	background: #76EE00;
+}
+
+
+
+.menu {
+	margin: 1px;
+	padding: 4px;
+	font-weight: bold;
+	cursor: pointer;
+	background: #FF4500;
+	color: #ffffff;
+}
+
+#apiname {
+	width: 95%;
+	margin: 30px;
+	text-align: center;
+	font-weight: bold;
+	color: #B22222;
+}
+
+
+#article {
+	width: 95%;
+	margin-left: 20px;
+	border: 1px dashed #fff;
+}
+
+.list {
+	cursor: default;
+	list-style-type: none;
+	padding: 5px;
+	margin: 0;
+}
+
+.list li {
+	padding: 3px;
+	border-bottom: dotted 1px #aaf;
+}
+
+.list li:HOVER {
+	background: #76EE00;
+}
+
+#delapi {
+	cursor: pointer;
+	color: #68228B;
+}
+
+#delapi:HOVER {
+	color: blue;
+}
+
+.set_menu {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	background: #FF4500;
+	color: #ffffff;
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.inpt_menu {
+	width: 100px;
+}
+
+.inpt_prio {
+	width: 60px;
+	text-align: center
+}
+
+.yuanjiao {
+	cursor: pointer;
+	background:#76EE00;
+	padding:5px 0px 5px 0px;
+	-moz-border-padding:5px 20px 5px 20px;
+	-webkit-border-padding:5px 20px 5px 20px;
+	/* Gecko browsers */
+	-moz-border-radius: 15px;
+	/* Webkit browsers */
+	-webkit-border-radius: 15px;
+	/* W3C syntax - likely to be standard so use for future proofing */
+	border-radius: 15px;
+	color:#FFF;
+}
+.yuanjiao:hover {
+	background:#0000FF;
+}
+.xuhao{
+	width: 40px;
+	height: 24px;
+	text-align: center;
+	line-height: 24px;
+	-moz-border-padding:5px 20px 5px 20px;
+	-webkit-border-padding:5px 20px 5px 20px;
+	/* Gecko browsers */
+	-moz-border-radius: 12px;
+	/* Webkit browsers */
+	-webkit-border-radius: 12px;
+	/* W3C syntax - likely to be standard so use for future proofing */
+	border-radius: 12px;
+	background:#FF4500;
+	color: white;
+}
+#navig{
+	width:97%;
+	height: 32px;
+	line-height:32px;
+	margin-top:31px;
+	margin-left:20px;
+	font-size:13px;
+	font-weight:bold;
+	background:#e4e4e4;
+	background:#f9e9d2;
+	padding-left:10px;
+	/* Gecko browsers */
+	-moz-border-radius: 5px;
+	/* Webkit browsers */
+	-webkit-border-radius:5px;
+	/* W3C syntax - likely to be standard so use for future proofing */
+	border-radius: 5px;
+}
+#testmsg{word-break:break-all;}
