@@ -56,7 +56,13 @@ html, body {
 	float: right;
 	width: 50%;
 	font-size: 18px;
+	color: white;
 }
+
+#top_daohang a{
+	color: white;
+}
+
 #top_daohang a {
 	text-decoration: none;
 }
@@ -64,6 +70,7 @@ html, body {
 #bottom {
 	margin: 0px;
 	width: 100%;
+	color: #fff;
 	height: auto;
 	padding: 10px 0;
 	text-align: center;
