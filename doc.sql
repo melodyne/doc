@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 127.0.0.1_3306
-Source Server Version : 50505
-Source Host           : 127.0.0.1:3306
-Source Database       : yunsu_nav
+Source Server         : 测试环境-本地
+Source Server Version : 50720
+Source Host           : localhost:3306
+Source Database       : doc
 
 Target Server Type    : MYSQL
-Target Server Version : 50505
+Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2017-09-11 18:18:03
+Date: 2018-04-12 15:19:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -220,3 +220,39 @@ INSERT INTO `doc_website` VALUES ('25', '1', 'sdfsd', 'http://www.runoob.com/try
 INSERT INTO `doc_website` VALUES ('26', '1', 'sdfsd', 'http://www.runoob.com/try/try.php?filename=try_ng_', '', '0', '1504693930');
 INSERT INTO `doc_website` VALUES ('27', '1', 'sdfsdsdfs', 'http://www.runoob.com/try/try.php?filename=try_ng_', '', '0', '1504693956');
 INSERT INTO `doc_website` VALUES ('28', '1', 'dfsdf', 'svn://www.runoob.com/try/try.php?filename=try_ng_', '', '0', '1504693992');
+
+-- ----------------------------
+-- Table structure for `nv_project`
+-- ----------------------------
+DROP TABLE IF EXISTS `nv_project`;
+CREATE TABLE `nv_project` (
+  `pro_id` int(5) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `creat_time` int(10) NOT NULL,
+  PRIMARY KEY (`pro_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of nv_project
+-- ----------------------------
+INSERT INTO `nv_project` VALUES ('1', '2323', '33');
+
+-- ----------------------------
+-- Table structure for `nv_website`
+-- ----------------------------
+DROP TABLE IF EXISTS `nv_website`;
+CREATE TABLE `nv_website` (
+  `website_id` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `pro_id` int(11) unsigned NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `url` varchar(50) NOT NULL,
+  `type` varchar(1) NOT NULL,
+  `statuse` int(1) NOT NULL,
+  `create_time` int(10) NOT NULL,
+  PRIMARY KEY (`website_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of nv_website
+-- ----------------------------
+INSERT INTO `nv_website` VALUES ('1', '1', '酷嗨', 'www。kuhai.con', '1', '1', '20122');
