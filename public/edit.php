@@ -1,6 +1,6 @@
 <?php
-require_once 'inc/db.php';
-require_once 'inc/Mode.php';
+require_once '../inc/db.php';
+require_once '../inc/Mode.php';
 $menus = exesql("select * from menus");
 $authors = exesql("select * from authors");
 ?>
@@ -68,8 +68,8 @@ lable{
 	  background:#FC9;
 }
 </style>
-<?php require_once 'public/header.php';?>
-<script type="text/javascript" charset="utf-8" src="/public/home/js/edit.js"></script>
+<?php require_once 'header.php';?>
+<script type="text/javascript" charset="utf-8" src="/home/js/edit.js"></script>
 
 <div  class="edt" style="width: 900px; margin:0 auto;">
 
@@ -101,7 +101,7 @@ lable{
             <table id="paras">
 
             </table>
-			<div class="addpara"><img onclick="addPara()" width="37px" src='/public/home/images/add.jpg'></div>
+			<div class="addpara"><img onclick="addPara()" width="37px" src='/home/images/add.jpg'></div>
        </div>
 
        <div class="round-none">
@@ -121,11 +121,11 @@ lable{
 					<td><div class="xuhao">1</div></td>
 					<td><input name="code" value="100" style="width: 80px;" /></td>
 					<td><input name="msg"  value="操作成功" style="width: 308px;text-align: left;"/></td>
-					<td><img onclick="removeHtml(this)" width="20px" src="/public/home/images/del.png"></td>
+					<td><img onclick="removeHtml(this)" width="20px" src="/home/images/del.png"></td>
 				</tr>
 
             </table>
-			<div class="addpara"><img onclick="addCode()" width="37px" src='/public/home/images/add.jpg'></div>
+			<div class="addpara"><img onclick="addCode()" width="37px" src='/home/images/add.jpg'></div>
        </div>
 
 
@@ -201,4 +201,4 @@ lable{
     	</div>
      </div>
     <!--   左边结束 -->
-<?php require_once 'public/footer.php';?>
+<?php require_once 'footer.php';?>

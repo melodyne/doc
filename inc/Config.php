@@ -7,7 +7,7 @@ class Config{
     //public static $dbName="wzswanji_chen";
 	
 	public static $dbUser="root";
-    public static $dbPwd="hnyy2015root";
-    public static $dbName="yunsu_nav";
+    public static $dbPwd="123456";
+    public static $dbName="doc";
 }
 ?>

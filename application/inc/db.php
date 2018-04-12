@@ -2,12 +2,13 @@
 require_once 'Config.php';
 function exesql($sql)
 {
-    $connection = mysql_connect(Config::$dbHost, Config::$dbUser, Config::$dbPwd);
-    mysql_query("set names 'utf8'");
+    //$connection = mysqli_connect(Config::$dbHost, Config::$dbUser, Config::$dbPwd, Config::$dbName);
+    mysqli_query("set names 'utf8'");
     //mysql_query("SET CHARACTER SET utf8");
     if (! $connection) {
-        return ('Could not connect: ' . mysql_error());
+        return ('Could not connect: ' . mysqli_connect_error());
     }
+
 
     $db_selected = mysql_select_db(Config::$dbName, $connection);
     if (! $db_selected) {

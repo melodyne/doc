@@ -1,7 +1,7 @@
 <?php
 require_once '../inc/db.php';
 require_once '../inc/Mode.php';
-$menus = exesql("select * from menus order by priority asc");
+$menus = exesql("select * from doc_menus order by priority asc");
 if (isset($_GET['docid']) && ! empty($_GET['docid'])) {
     $apiId = $_GET['docid'];
     $apiInf = getApiById($apiId);
@@ -9,9 +9,9 @@ if (isset($_GET['docid']) && ! empty($_GET['docid'])) {
     $apiInf=array();
 }
 ?>
-<script src="/public/json_view/js/c.js" type="text/javascript"></script>
-<link href="/public/json_view/css/s.css" type="text/css" rel="stylesheet"></link>
-<script src="/public/home/js/api.js" type="text/javascript"></script>
+<script src="/json_view/js/c.js" type="text/javascript"></script>
+<link href="/json_view/css/s.css" type="text/css" rel="stylesheet"></link>
+<script src="/home/js/api.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function(){
         $('#st').change(function(e){
@@ -28,13 +28,13 @@ if (isset($_GET['docid']) && ! empty($_GET['docid'])) {
 
 		<?php foreach ($menus as $menu){?>
 		<div id="menu<?php echo $menu['menuid']?>" onclick="openmenu('<?php echo $menu['menuid']?>')" class="menu">
-		    <img style="margin-right: 5px;" height="20px" src="/public/home/css/openmenu.png"><?php echo $menu['menuname']?>
+		    <img style="margin-right: 5px;" height="20px" src="/home/css/openmenu.png"><?php echo $menu['menuname']?>
 		</div>
 
 		<ul id="item<?php echo $menu['menuid']?>" class="list">
 			<?php
                 $menuid = $menu['menuid'];
-                $arts = exesql("select * from apis,authors,menus where apis.authorid=authors.authorid and apis.menuid=menus.menuid and menus.menuid=$menuid order by wtime asc");
+                $arts = exesql("select * from doc_apis,doc_authors,doc_menus where doc_apis.authorid=doc_authors.authorid and doc_apis.menuid=doc_menus.menuid and doc_menus.menuid=$menuid order by wtime asc");
                 foreach ($arts as $art) {
             ?>
                <li onclick="location='api.php?docid=<?php echo $art['apiid']?>'"><?php echo $art['apiname']?></li>
@@ -49,12 +49,12 @@ if (isset($_GET['docid']) && ! empty($_GET['docid'])) {
 	   if($apiInf==null){
 		   ?>
 		   <div id="Content-Main" style="margin-top:-50px">
-		     <div align="center"><img src="/public/home/images/02.jpg"/></div>
-			 <div align="center"><img id="round-none" src="/public/home/images/01.png"/></div>
+		     <div align="center"><img src="/home/images/02.jpg"/></div>
+			 <div align="center"><img id="round-none" src="/home/images/01.png"/></div>
 		   </div>
 		   <?php
 		  
-		   require_once 'public/footer.php';
+		   require_once 'footer.php';
 		   return;
 		} 
 	   ?>
@@ -234,8 +234,8 @@ if (isset($_GET['docid']) && ! empty($_GET['docid'])) {
                 <?php } ?>
 
                 <!-- 格式化json开始 -->
-		        <script src="/public/json_view/js/c.js" type="text/javascript"></script>
-				<link href="/public/json_view/css/s.css" type="text/css" rel="stylesheet"></link>
+		        <script src="/json_view/js/c.js" type="text/javascript"></script>
+				<link href="/json_view/css/s.css" type="text/css" rel="stylesheet"></link>
 				<div id="ControlsRow">
 					<input type="Button" value="隐藏" /> <span id="TabSizeHolder"> 缩进量
 						<select id="TabSize" onchange="TabSizeChanged()">
@@ -270,7 +270,7 @@ if (isset($_GET['docid']) && ! empty($_GET['docid'])) {
                 <div id="Canvas" class="Canvas" ondblclick="selectText('Canvas')"></div>
 				<div id="testmsg"></div>
 				<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
-				<script type="text/javascript" src="/public/json_view/js/m.js"></script>
+				<script type="text/javascript" src="/json_view/js/m.js"></script>
                 <!-- 格式化json结束-->
 
 	   </div>
