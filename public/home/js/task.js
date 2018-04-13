@@ -35,7 +35,7 @@ function addTask(){
 		             +'<td><input name="module" style="width: 80px;"></td>'
 		             +'<td><input name="task" style="width: 300px;"></td>'
 		             +'<td><input name="progress" style="width: 50px;text-align:center""></td>'
-		             +'<td><img onclick="removeHtml(this)" width="20px" src="/public/home/images/del.png"></td>'
+		             +'<td><img onclick="removeHtml(this)" width="20px" src="/home/images/del.png"></td>'
 	             +'</tr>'
 
 	$('#paras').append(paras);

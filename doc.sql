@@ -10,10 +10,26 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-04-12 15:19:58
+Date: 2018-04-13 16:25:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `doc_apis`
+-- ----------------------------
+DROP TABLE IF EXISTS `doc_apis`;
+CREATE TABLE `doc_apis` (
+  `api_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `authorid` int(11) NOT NULL,
+  `menuid` int(11) NOT NULL,
+  `wtime` int(10) NOT NULL,
+  PRIMARY KEY (`api_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of doc_apis
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `doc_articles`
@@ -106,20 +122,36 @@ DROP TABLE IF EXISTS `doc_authors`;
 CREATE TABLE `doc_authors` (
   `authorid` int(2) NOT NULL AUTO_INCREMENT,
   `authname` char(10) NOT NULL,
+  `pwd` varchar(50) NOT NULL,
   `department` char(10) NOT NULL COMMENT '部门',
   `position` char(10) NOT NULL COMMENT '职位',
+  `test_account` varchar(20) DEFAULT NULL,
+  `test_pwd` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`authorid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of doc_authors
 -- ----------------------------
-INSERT INTO `doc_authors` VALUES ('3', '汪君相', '研发部', '程序员');
-INSERT INTO `doc_authors` VALUES ('4', '张煌', '研发部', '程序员');
-INSERT INTO `doc_authors` VALUES ('5', '陈万洲', '研发部', '程序员');
-INSERT INTO `doc_authors` VALUES ('6', '李俊宇', '研发部', '程序员');
-INSERT INTO `doc_authors` VALUES ('8', '浩天', '开发部', '系统架构师');
-INSERT INTO `doc_authors` VALUES ('9', '马小康', '开发部', '程序员');
+INSERT INTO `doc_authors` VALUES ('3', '汪君相', '', '研发部', '程序员', '', null);
+INSERT INTO `doc_authors` VALUES ('4', '张煌', '', '研发部', '程序员', '', null);
+INSERT INTO `doc_authors` VALUES ('5', '陈万洲', '123456', '研发部', '程序员', '', null);
+INSERT INTO `doc_authors` VALUES ('6', '李俊宇', '', '研发部', '程序员', '', null);
+INSERT INTO `doc_authors` VALUES ('8', '浩天', '', '开发部', '系统架构师', '', null);
+INSERT INTO `doc_authors` VALUES ('9', '马小康', '', '开发部', '程序员', '', null);
+
+-- ----------------------------
+-- Table structure for `doc_hosts`
+-- ----------------------------
+DROP TABLE IF EXISTS `doc_hosts`;
+CREATE TABLE `doc_hosts` (
+  `host_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`host_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of doc_hosts
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `doc_links`
@@ -188,6 +220,28 @@ INSERT INTO `doc_project` VALUES ('1', '小镇演义', '33');
 INSERT INTO `doc_project` VALUES ('10', '琼中云书宿', '0');
 INSERT INTO `doc_project` VALUES ('12', '为而为', '0');
 INSERT INTO `doc_project` VALUES ('13', 'sdsd', '0');
+
+-- ----------------------------
+-- Table structure for `doc_tasks`
+-- ----------------------------
+DROP TABLE IF EXISTS `doc_tasks`;
+CREATE TABLE `doc_tasks` (
+  `taskid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `authorid` int(11) DEFAULT NULL,
+  `year` tinyint(4) DEFAULT NULL,
+  `month` tinyint(2) DEFAULT NULL,
+  `day` tinyint(2) DEFAULT NULL,
+  `athname` varchar(10) DEFAULT NULL,
+  `describe` varchar(2048) DEFAULT NULL,
+  `create_time` int(10) DEFAULT NULL,
+  `update_time` int(10) DEFAULT NULL,
+  PRIMARY KEY (`taskid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of doc_tasks
+-- ----------------------------
+INSERT INTO `doc_tasks` VALUES ('1', '5', '18', '4', '13', '陈万洲', '[{\"type\":\"新增功能\",\"module\":\"模块\",\"task\":\"胜多负少的\",\"progress\":\"100\"},{\"type\":\"完善功能\",\"module\":\"的双方各\",\"task\":\"水电费\",\"progress\":\"100\"}]', null, null);
 
 -- ----------------------------
 -- Table structure for `doc_website`

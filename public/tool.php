@@ -1,4 +1,5 @@
-﻿<script src="/json_view/js/c.js" type="text/javascript"></script>
+﻿<?php require_once 'header.php';?>
+<script src="/json_view/js/c.js" type="text/javascript"></script>
 <link href="/json_view/css/s.css" type="text/css" rel="stylesheet"></link>
 <div style="margin:20px 50px 260px 50px;">
     <div class="HeadersRow">

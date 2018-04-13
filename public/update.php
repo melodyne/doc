@@ -80,7 +80,7 @@ lable{
 	  background:#FC9;
 }
 </style>
-<script type="text/javascript" charset="utf-8" src="/public/home/js/edit.js"></script>
+<script type="text/javascript" charset="utf-8" src="/home/js/edit.js"></script>
 
 <div  class="edt" style="width: 900px; margin:0 auto;">
 
@@ -107,7 +107,7 @@ lable{
 
         <div class="item">
             <lable>提交方式:</lable>
-            <input type="radio" <?php if($apidoc[0]['method']=="get")echo 'checked="checked"';?> name="action" value="get" /><span>Get</apan>
+            <input type="radio" <?php if($apidoc[0]['method']=="get")echo 'checked="checked"';?> name="action" value="get" /><span>Get</span>
             <input type="radio" <?php if($apidoc[0]['method']=="post")echo 'checked="checked"';?> name="action" value="post" /><span>Post</span>
 			 <input type="radio" <?php if ($apidoc[0]['method']=="get post")echo 'checked="checked"';?> name="action" value="get post" /><span>Get Post</span>
         </div>

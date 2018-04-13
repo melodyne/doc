@@ -1,5 +1,5 @@
 <!-- 左边开始 -->
-<script src="/public/home/js/task.js"></script>
+<script src="/home/js/task.js"></script>
 <div id="Content-Left">
 	{include file="left" /}
 </div>
@@ -51,7 +51,7 @@
 				             <td><input  name="module" value="{$item['module']}" style="width: 80px;"></td>
 				             <td><input name="task" value="{$item['task']}" style="width: 300px;"></td>
 				             <td><input name="progress" value="{$item['progress']}" style="width: 50px;text-align:center"></td>
-				             <td><img onclick="removeHtml(this)" width="20px" src="/public/home/images/del.png"></td>
+				             <td><img onclick="removeHtml(this)" width="20px" src="/home/images/del.png"></td>
 			             </tr>
                     {/volist}
 
@@ -59,7 +59,7 @@
 		            
 	             </tbody>
             </table>
-			<div class="addpara" style="margin-top:10px"><img onclick="addTask()" width="37px" src="/public/home/images/add.jpg"></div>
+			<div class="addpara" style="margin-top:10px"><img onclick="addTask()" width="37px" src="/home/images/add.jpg"></div>
 			<div align="right" style="width:700px;margin:80px 0px 200px 0px">
 				<label onclick="taskcommit()" class="taskcommit">提交任务</label>
 				<label class="nocommit" onclick="nocommit()">放弃提交</label>

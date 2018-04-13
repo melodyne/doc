@@ -5,14 +5,8 @@ $authors = exesql("select * from doc_authors");
 $mylink = exesql("select * from doc_links order by priority asc");
 $hosts = exesql("select * from doc_hosts");
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>云游网API_设置</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-</head>
-<link rel="stylesheet" href="/public/home/css/yunyou.css" type="text/css" media="screen" />
+<?php require_once 'header.php';?>
+<link rel="stylesheet" href="/home/css/yunyou.css" type="text/css" media="screen" />
 <script type="text/javascript" charset="utf-8" src="ueditor/third-party/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="js/check.js"></script>
 <script type="text/javascript" src="js/set.js"></script>
@@ -306,9 +300,6 @@ function add_host() {
 
 
 </script>
-</head>
-
-<body>
   <div id="container">
 		<div id="contents" style="margin: 10px 100px 10px 100px;">
 			<div class="set_menu">

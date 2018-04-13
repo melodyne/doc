@@ -212,7 +212,7 @@ function addPara(){
 		 +'</select>'
 		 +'</td>'
 		 +'<td><input name="intro" style="width: 200px;"/></td>'
-		 +'<td><img onclick="removeHtml(this)" width="20px" src="/public/home/images/del.png"></td>'
+		 +'<td><img onclick="removeHtml(this)" width="20px" src="/home/images/del.png"></td>'
 		 +'</tr>';
 	}else{
 		 paras='<tr class="paraval">'
@@ -227,7 +227,7 @@ function addPara(){
 		 +'</select>'
 		 +'</td>'
 		 +'<td><input name="intro" style="width: 200px;"/></td>'
-		 +'<td><img onclick="removeHtml(this)" width="20px" src="/public/home/images/del.png"></td>'
+		 +'<td><img onclick="removeHtml(this)" width="20px" src="/home/images/del.png"></td>'
 		 +'</tr>';
 	}
 	
@@ -250,14 +250,14 @@ function addCode(){
 		 +'<td><div class="xuhao">'+(i+1)+'</div></td>'
 		 +'<td><input name="code"  style="width: 80px;"/></td>'
 		 +'<td><input name="msg"   style="width: 308px;text-align: left;"/></td>'
-		 +'<td><img onclick="removeHtml(this)" width="20px" src="/public/home/images/del.png"></td>'
+		 +'<td><img onclick="removeHtml(this)" width="20px" src="/home/images/del.png"></td>'
 		 +'</tr>';
 	}else{
 		 htm='<tr class="code_item">'
 		 +'<td><div class="xuhao">'+(i+1)+'</div></td>'
 		 +'<td><input name="code"  style="width: 80px;"/></td>'
 		 +'<td><input name="msg"   style="width: 308px;text-align: left;"/></td>'
-		 +'<td><img onclick="removeHtml(this)" width="20px" src="/public/home/images/del.png"></td>'
+		 +'<td><img onclick="removeHtml(this)" width="20px" src="/home/images/del.png"></td>'
 		 +'</tr>';
 	}
 	
