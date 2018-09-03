@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 测试环境-本地
+Source Server         : localhost_3306
 Source Server Version : 50720
 Source Host           : localhost:3306
 Source Database       : doc
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-04-13 16:25:12
+Date: 2018-09-03 15:14:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -309,4 +309,4 @@ CREATE TABLE `nv_website` (
 -- ----------------------------
 -- Records of nv_website
 -- ----------------------------
-INSERT INTO `nv_website` VALUES ('1', '1', '酷嗨', 'www。kuhai.con', '1', '1', '20122');
+INSERT INTO `nv_website` VALUES ('1', '1', '酷嗨', 'www.kuhai.con', '1', '1', '20122');
