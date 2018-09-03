@@ -1,129 +1,141 @@
-ThinkPHP 5.0
-===============
+# XMall
+[![AUR](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/melodyne/doc/blob/master/License)
+[![](https://img.shields.io/badge/Author-melodyne-orange.svg)](http://blog.exrick.cn)
+[![](https://img.shields.io/badge/version-1.0-brightgreen.svg)](https://github.com/melodyne/doc)
+[![GitHub stars](https://img.shields.io/github/stars/melodyne/doc.svg?style=social&label=Stars)](https://github.com/melodyne/doc)
+[![GitHub forks](https://img.shields.io/github/forks/melodyne/doc.svg?style=social&label=Fork)](https://github.com/melodyne/doc)
 
-[![Total Downloads](https://poser.pugx.org/topthink/think/downloads)](https://packagist.org/packages/topthink/think)
-[![Latest Stable Version](https://poser.pugx.org/topthink/think/v/stable)](https://packagist.org/packages/topthink/think)
-[![Latest Unstable Version](https://poser.pugx.org/topthink/think/v/unstable)](https://packagist.org/packages/topthink/think)
-[![License](https://poser.pugx.org/topthink/think/license)](https://packagist.org/packages/topthink/think)
 
-ThinkPHP5在保持快速开发和大道至简的核心理念不变的同时，PHP版本要求提升到5.4，对已有的CBD模式做了更深的强化，优化核心，减少依赖，基于全新的架构思想和命名空间实现，是ThinkPHP突破原有框架思路的颠覆之作，其主要特性包括：
+### 项目已部署，在线Demo
+- 前台：http://doc.yunyii.cn/
+- 后台：http://doc.yunyii.cn/admin
 
- + 基于命名空间和众多PHP新特性
- + 核心功能组件化
- + 强化路由功能
- + 更灵活的控制器
- + 重构的模型和数据库类
- + 配置文件可分离
- + 重写的自动验证和完成
- + 简化扩展机制
- + API支持完善
- + 改进的Log类
- + 命令行访问支持
- + REST支持
- + 引导文件支持
- + 方便的自动生成定义
- + 真正惰性加载
- + 分布式环境支持
- + 更多的社交类库
+![](https://i.loli.net/2018/07/22/5b5460eb23cb9.jpg "登录界面")
 
-> ThinkPHP5的运行环境要求PHP5.4以上。
+![](https://i.loli.net/2018/07/22/5b5461099039e.jpg "后台首页")
 
-详细开发文档参考 [ThinkPHP5完全开发手册](http://www.kancloud.cn/manual/thinkphp5)
+![](https://i.loli.net/2018/07/22/5b546125886ca.jpg "商品管理")
 
-## 目录结构
+![](https://i.loli.net/2018/07/22/5b54613bc866f.jpg "管理员编辑")
 
-初始的目录结构如下：
+![](https://i.loli.net/2018/07/22/5b54615b95788.jpg "前台首页")
 
-~~~
-www  WEB部署目录（或者子目录）
-├─application           应用目录
-│  ├─common             公共模块目录（可以更改）
-│  ├─module_name        模块目录
-│  │  ├─config.php      模块配置文件
-│  │  ├─common.php      模块函数文件
-│  │  ├─controller      控制器目录
-│  │  ├─model           模型目录
-│  │  ├─view            视图目录
-│  │  └─ ...            更多类库目录
-│  │
-│  ├─command.php        命令行工具配置文件
-│  ├─common.php         公共函数文件
-│  ├─config.php         公共配置文件
-│  ├─route.php          路由配置文件
-│  ├─tags.php           应用行为扩展定义文件
-│  └─database.php       数据库配置文件
-│
-├─public                WEB目录（对外访问目录）
-│  ├─index.php          入口文件
-│  ├─router.php         快速测试文件
-│  └─.htaccess          用于apache的重写
-│
-├─thinkphp              框架系统目录
-│  ├─lang               语言文件目录
-│  ├─library            框架类库目录
-│  │  ├─think           Think类库包目录
-│  │  └─traits          系统Trait目录
-│  │
-│  ├─tpl                系统模板目录
-│  ├─base.php           基础定义文件
-│  ├─console.php        控制台入口文件
-│  ├─convention.php     框架惯例配置文件
-│  ├─helper.php         助手函数文件
-│  ├─phpunit.xml        phpunit配置文件
-│  └─start.php          框架入口文件
-│
-├─extend                扩展类库目录
-├─runtime               应用的运行时目录（可写，可定制）
-├─vendor                第三方类库目录（Composer依赖库）
-├─build.php             自动生成定义文件（参考）
-├─composer.json         composer 定义文件
-├─LICENSE.txt           授权说明文件
-├─README.md             README 文件
-├─think                 命令行入口文件
-~~~
+![](https://i.loli.net/2018/07/22/5b5461756b2b0.jpg "ES分词搜索")
 
-> router.php用于php自带webserver支持，可用于快速测试
-> 切换到public目录后，启动命令：php -S localhost:8888  router.php
-> 上面的目录结构和名称是可以改变的，这取决于你的入口文件和配置参数。
+### 项目架构及功能模块图
 
-## 命名规范
+![](https://i.loli.net/2018/07/22/5b5461926969b.png)
 
-`ThinkPHP5`遵循PSR-2命名规范和PSR-4自动加载规范，并且注意如下规范：
+![](https://i.loli.net/2018/07/22/5b5461aa2fdee.jpg)
 
-### 目录和文件
+![](https://i.loli.net/2018/07/22/5b5461c54cb55.jpg)
 
-*   目录不强制规范，驼峰和小写+下划线模式均支持；
-*   类库、函数文件统一以`.php`为后缀；
-*   类的文件名均以命名空间定义，并且命名空间的路径和类库文件所在路径一致；
-*   类名和类文件名保持一致，统一采用驼峰法命名（首字母大写）；
+### 前端所用技术
+- 后台页面
+    - 感谢 [H-ui](http://www.h-ui.net/)、[FlatLab](https://github.com/Exrick/xmall/blob/master/study/FlatLab.md) 提供静态页面支持
+    - [Ztree](http://www.treejs.cn/v3/main.php#_zTreeInfo)：jQuery树插件
+    - [DataTables](http://www.datatables.club/)：jQuery表格插件
+    - [Layer](http://layer.layui.com/)：web弹层组件
+    - [Distpicker](https://github.com/fengyuanchen/distpicker)：中国省市区地址三级联动插件
+    - [KindEditor](https://github.com/kindsoft/kindeditor)：富文本编辑器 简洁方便 没UEditor那么多坑
+    - [WebUploader](http://fex.baidu.com/webuploader/getting-started.html)：百度文件上传插件
+    - [HighCharts](http://www.hcharts.cn/)：图表库
+    - [不蒜子](http://busuanzi.ibruce.info/)：极简网页计数器
+- 前台页面
+    - 详情请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库
+    - 感谢 [yucccc](https://github.com/yucccc) 的开源 [vue-mall](https://github.com/yucccc/vue-mall) 项目提供前端页面及框架支持
+    - Vue2 + Vuex + Vue Router + Element UI + ES6 + webpack + axios + Node.js
+    
+### 后端所用技术
+##### 各框架依赖版本皆使用目前最新版本 可进入xmall-parent中 [pom.xml](https://github.com/Exrick/xmall/blob/master/xmall-parent/pom.xml) 查看
+- Spring
+- [SpringMVC](https://github.com/Exrick/xmall/blob/master/study/SpringMVC.md)
+- MyBatis
+- [Dubbo](https://github.com/Exrick/xmall/blob/master/study/Dubbo.md)
+- [ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)
+- MySQL
+- Mycat：数据库分库分表中间件
+- [Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)：缓存
+- [Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)：基于Lucene分布式搜索引擎
+- [ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)：消息队列
+- [Druid](http://druid.io/)：阿里高性能数据库连接池
+- Shiro：安全框架
+- [Swagger2](https://github.com/Exrick/xmall/blob/master/study/Swagger2.md)：Api文档生成
+- Docker
+- [Nginx](https://github.com/Exrick/xmall/blob/master/study/Nginx.md)
+- Tomcat
+- [Maven](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
+- 第三方SDK
+    - [七牛云文件存储服务](https://developer.qiniu.com/kodo/sdk/1239/java)
+    - [极验Test-button人机验证码](http://www.geetest.com/Test-button.html)
+- 第三方插件
+    - [hotjar](https://github.com/Exrick/xmall/blob/master/study/hotjar.md)：一体化分析和反馈
+    - [搜狐畅言评论插件](http://changyan.kuaizhan.com/)
+- 第三方接口
+    - [Mob全国天气预报接口](http://api.mob.com/#/apiwiki/weather)：需注册账号创建应用后申请填入AppKey
+- 其它开发工具
+    - Jenkins：持续集成
+    - ~~[JRebel](https://github.com/Exrick/xmall/blob/master/study/JRebel.md)：开发热部署~~ 现已无法免费使用
+    - [阿里JAVA开发规约插件](https://github.com/alibaba/p3c)
 
-### 函数和类、属性命名
-*   类的命名采用驼峰法，并且首字母大写，例如 `User`、`UserType`，默认不需要添加后缀，例如`UserController`应该直接命名为`User`；
-*   函数的命名使用小写字母和下划线（小写字母开头）的方式，例如 `get_client_ip`；
-*   方法的命名使用驼峰法，并且首字母小写，例如 `getUserName`；
-*   属性的命名使用驼峰法，并且首字母小写，例如 `tableName`、`instance`；
-*   以双下划线“__”打头的函数或方法作为魔法方法，例如 `__call` 和 `__autoload`；
+### 文件说明
+- `xmall` 文件夹提供部分依赖与sql文件
+    - xmall.sql：数据库文件
+    - dubbo.xsd：需手动配置避免报错
+    - redis-3.0.0.gem：Redis集群搭建所需Ruby库
+- `generatorSqlmapCustom` 文件夹为 [Mybatis Generator](http://www.mybatis.org/generator/) 逆向生成工具，且已配置好maven插件
+### 本地开发运行部署
+- 下载zip直接解压或安装git后执行克隆命令 `git clone https://github.com/Exrick/xmall.git`
+- 安装各中间件并启动：[ZooKeeper](https://github.com/Exrick/xmall/blob/master/study/Zookeeper.md)、[Redis](https://github.com/Exrick/xmall/blob/master/study/Redis.md)、[ActiveMQ](https://github.com/Exrick/xmall/blob/master/study/ActiveMQ.md)、[Elasticsearch](https://github.com/Exrick/xmall/blob/master/study/Elasticsearch.md)
+- 修改各配置文件相应依赖IP配置(默认本地127.0.0.1)，以及七牛云、极验配置、天气接口在 `xmall-common - utils` 中找到修改，XPay邮箱配置在 `manager-service与sso-service` 中
+- [Maven安装和在IDEA中配置](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
+- 使用IDEA([破解/免费注册](http://idea.lanyus.com/)) `File-Open` 直接打开xmall项目，点击右下角 `Import Changes` 等待安装完依赖即可
+- MySQL数据库新建 `xmall` 数据库，运行sql文件，注意在有 `db.properties` 的模块中修改你的数据库连接配置
+- 按照依赖顺序分别在每个模块文件夹根目录执行 `mvn install` 命令
+- 项目需运行除 `xmall-parent` `xmall-common` 以外其它所有6个服务，且都已配置好Tomcat插件, 执行命令 `mvn tomcat7:run` 或在IDEA中使用插件(`View - Tool Buttons - 右侧菜单Maven Projects - tomcat7 - tomcat7:run`)运行即可，当然可自行配置
+- 后端管理系统默认端口8888 http://localhost:8888 管理员账密admin|123456
+- 前端项目接口默认端口7777 前台页面请启动基于Vue的 [xmall-front](https://github.com/Exrick/xmall-front) 项目，并修改其接口配置
+### 相关技术点说明
+- ES-IK分词插件词典库扩展
+    - 详见 [elasticsearch-analysis-ik插件作者项目README说明](https://github.com/medcl/elasticsearch-analysis-ik)
+    - 本项目中扩展接口和禁用词接口分别为 `http:localhost:8888/getDictList` 和 `http:localhost:8888/getStopDictList`，将以上2个接口配置进IK插件扩展配置文件{conf}/analysis-ik/config/IKAnalyzer.cfg.xml 或者 {plugins}/elasticsearch-analysis-ik-*/config/IKAnalyzer.cfg.xml中即可，示例：
 
-### 常量和配置
-*   常量以大写字母和下划线命名，例如 `APP_PATH`和 `THINK_PATH`；
-*   配置参数以小写字母和下划线命名，例如 `url_route_on` 和`url_convert`；
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+    <properties>
+        <comment>IK Analyzer 扩展配置</comment>
+        <!--用户可以在这里配置远程扩展字典 -->
+        <entry key="remote_ext_dict">http:localhost:8888/getDictList</entry>
+        <!--用户可以在这里配置远程扩展停止词字典-->
+        <entry key="remote_ext_stopwords">http:localhost:8888/getStopDictList</entry>
+    </properties>
+    ```
+- 限流
+    - `xmall-front-web` 中已配置限流，配置文件 `resource.properties` 中可配置全局限流，示例：
 
-### 数据表和字段
-*   数据表和字段采用小写加下划线方式命名，并注意字段名不要以下划线开头，例如 `think_user` 表和 `user_name`字段，不建议使用驼峰和中文作为数据表字段命名。
+        ```properties
+        #启用全局限流
+        xmall.rateLimit.enable=true
+        #每1秒内
+        xmall.rateLimit.timeout=1000
+        #限制10个请求
+        xmall.rateLimit.limit=10
+        ```
+    - 指定方法限流注解
+        ```java
+        @RateLimiter(limit = 1, timeout = 5000)
+        ```
+    - 支持多维度IP、uid等限流 详见代码
+### 技术疑问交流
+- 技术交流群 `630096531` [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=52f6003e230b26addeed0ba6cf343fcf3ba5d97829d17f5b8fa5b151dba7e842)
 
-## 参与开发
-请参阅 [ThinkPHP5 核心框架包](https://github.com/top-think/framework)。
+- 作者博客：[http://yunyii.cn](http://yunyii.cn)
+### 商用授权
+- 个人学习使用遵循GPL开源协议
+- 商用需联系作者低价授权
+### 捐赠
+![](http://p77xsahe9.bkt.clouddn.com/18-7-20/54731550.jpg)
 
-## 版权信息
+![](http://p77xsahe9.bkt.clouddn.com/18-6-28/32845239.jpg)
 
-ThinkPHP遵循Apache2开源协议发布，并提供免费使用。
-
-本项目包含的第三方源码和二进制文件之版权信息另行标注。
-
-版权所有Copyright © 2006-2016 by ThinkPHP (http://thinkphp.cn)
-
-All rights reserved。
-
-ThinkPHP® 商标和著作权所有者为上海顶想信息科技有限公司。
-
-更多细节参阅 [LICENSE.txt](LICENSE.txt)
