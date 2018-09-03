@@ -128,14 +128,14 @@
         ```
     - 支持多维度IP、uid等限流 详见代码
 ### 技术疑问交流
-- 技术交流群 `630096531` [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=52f6003e230b26addeed0ba6cf343fcf3ba5d97829d17f5b8fa5b151dba7e842)
+- 技术交流群 `630096531` [![](http://pub.idqqimg.com/wpa/images/group.png)](https://jq.qq.com/?_wv=1027&k=4945coR)
 
 - 作者博客：[http://yunyii.cn](http://yunyii.cn)
 ### 商用授权
 - 个人学习使用遵循GPL开源协议
 - 商用需联系作者低价授权
 ### 捐赠
-![](http://p77xsahe9.bkt.clouddn.com/18-7-20/54731550.jpg)
+![]()
 
-![](http://p77xsahe9.bkt.clouddn.com/18-6-28/32845239.jpg)
+![]()
 
