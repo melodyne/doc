@@ -10,17 +10,7 @@
 - 前台：http://doc.yunyii.cn/
 - 后台：http://doc.yunyii.cn/admin
 
-![](https://i.loli.net/2018/07/22/5b5460eb23cb9.jpg "登录界面")
 
-![](https://i.loli.net/2018/07/22/5b5461099039e.jpg "后台首页")
-
-![](https://i.loli.net/2018/07/22/5b546125886ca.jpg "商品管理")
-
-![](https://i.loli.net/2018/07/22/5b54613bc866f.jpg "管理员编辑")
-
-![](https://i.loli.net/2018/07/22/5b54615b95788.jpg "前台首页")
-
-![](https://i.loli.net/2018/07/22/5b5461756b2b0.jpg "ES分词搜索")
 
 ### 项目架构及功能模块图
 
