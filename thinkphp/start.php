@@ -9,18 +9,11 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\route\dispatch;
+namespace think;
 
-use think\route\Dispatch;
+// ThinkPHP 引导文件
+// 1. 加载基础文件
+require __DIR__ . '/base.php';
 
-class Callback extends Dispatch
-{
-    public function exec()
-    {
-        // 执行回调方法
-        $vars = array_merge($this->request->param(), $this->param);
-
-        return $this->app->invoke($this->dispatch, $vars);
-    }
-
-}
+// 2. 执行应用
+App::run()->send();

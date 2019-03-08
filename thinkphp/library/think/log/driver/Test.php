@@ -1,32 +1,30 @@
 <?php
 // +----------------------------------------------------------------------
-// | ThinkPHP [ WE CAN DO IT JUST THINK ]
+// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006~2018 http://thinkphp.cn All rights reserved.
+// | Copyright (c) 2006-2016 http://thinkphp.cn All rights reserved.
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\response;
+namespace think\log\driver;
 
-use think\Response;
-
-class Jump extends Response
+/**
+ * 模拟测试输出
+ */
+class Test
 {
-    protected $contentType = 'text/html';
-
     /**
-     * 处理数据
-     * @access protected
-     * @param  mixed $data 要处理的数据
-     * @return mixed
-     * @throws \Exception
+     * 日志写入接口
+     * @access public
+     * @param array $log 日志信息
+     * @return bool
      */
-    protected function output($data)
+    public function save(array $log = [])
     {
-        $data = $this->app['view']->fetch($this->options['jump_template'], $data);
-        return $data;
+        return true;
     }
+
 }
